@@ -14,12 +14,14 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		return # Prevent two hits from triggering two respawns.
 
+	# Subtract the damage and keep health from going below 0
 	health = maxi(0, health - amount)
+	# Send the updated health to anything listening, such as a health bar
 	health_changed.emit(health)
 
 	if health == 0:
-		died.emit()
-		queue_free()
+		died.emit() # Tell GameMap the enemy died so it can schedule a respawn
+		queue_free() # Remove this enemy from the scene at the end of the frame
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
