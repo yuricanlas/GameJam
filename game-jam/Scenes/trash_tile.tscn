@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bm0jpvhyaca80"]
 
 [ext_resource type="Texture2D" uid="uid://ggkb5onkv7n" path="res://Assets/Trashville/Trashville-Tileset-Package-v1.1.png" id="1_f1fbe"]
+[ext_resource type="Script" uid="uid://c5i85bx4g12he" path="res://Scripts/trash_tile.gd" id="2_58pb2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58pb2"]
 texture = ExtResource("1_f1fbe")
@@ -1763,3 +1764,4 @@ sources/0 = SubResource("TileSetAtlasSource_58pb2")
 
 [node name="TrashTile" type="TileMapLayer" unique_id=566717525]
 tile_set = SubResource("TileSet_wl0ip")
+script = ExtResource("2_58pb2")
