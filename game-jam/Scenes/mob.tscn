@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dm8kpl2q3c7nw"]
+
+[ext_resource type="Texture2D" uid="uid://dg83c137np4o6" path="res://Assets/EnemySet/willosuna_station/x4/characters/aliens_robots/grey_alien/grey_alien_idle_down.png" id="1_h5js2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8nqw"]
+atlas = ExtResource("1_h5js2")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b44se"]
+atlas = ExtResource("1_h5js2")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypr7k"]
+atlas = ExtResource("1_h5js2")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frlhd"]
+atlas = ExtResource("1_h5js2")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpsb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8nqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b44se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypr7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frlhd")
+}],
+"loop": 1,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpsb2"]
+size = Vector2(57, 118)
+
+[node name="mob" type="CharacterBody2D" unique_id=1916443741]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1149847262]
+sprite_frames = SubResource("SpriteFrames_lpsb2")
+animation = &"idle_down"
+frame_progress = 0.7399886
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580376460]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_lpsb2")
