@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @onready var money = 0
 
-@export var trash_tile: PackedScene
+@export var trash_tile: TileMapLayer
 
 signal trash_erased
 

@@ -17,7 +17,23 @@ func is_tile_in_tileset(coords: Vector2i) -> bool:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("vaccum_left"):
+		self.visible = true
+		rotation_degrees = 270
+		position.x = -abs(position.x)
+		
+	if Input.is_action_just_pressed("vaccum_right"):
+		self.visible = true
+		rotation_degrees = 90
+		position.x = abs(position.x)
+	
+	if Input.is_action_just_released("vaccum_left"):
+		self.visible = false
+		
+	
+	if Input.is_action_just_released("vaccum_right"):
+		self.visible = false
+	
 
 func upgrade():
 	strength += 1

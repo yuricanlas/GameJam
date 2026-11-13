@@ -23,8 +23,8 @@ one_shot = true
 [node name="BaseWalls" parent="." unique_id=11968783 instance=ExtResource("6_rlp0x")]
 scale = Vector2(0.75, 0.75)
 
-[node name="CharacterBody2D" parent="." unique_id=212031758 instance=ExtResource("5_mue85")]
-trash_tile = ExtResource("2_c4nuu")
+[node name="CharacterBody2D" parent="." unique_id=212031758 node_paths=PackedStringArray("trash_tile") instance=ExtResource("5_mue85")]
+trash_tile = NodePath("../TrashTile")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
 zoom = Vector2(2, 2)
