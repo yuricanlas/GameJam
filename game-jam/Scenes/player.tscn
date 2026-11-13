@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb7p7"]
-size = Vector2(120, 140.00002)
+size = Vector2(136.00003, 140.00002)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dpga1"]
 animations = [{
@@ -70,7 +70,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=212031758]
+[node name="Player" type="CharacterBody2D" unique_id=212031758]
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147911024]
@@ -95,10 +95,13 @@ frame_progress = 0.65743315
 [node name="Area2D" type="Area2D" parent="Vacuum" unique_id=1541026742]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vacuum/Area2D" unique_id=2025386539]
-position = Vector2(3.4332275e-05, -10)
-scale = Vector2(4.999998, 4.999998)
+position = Vector2(-40.00002, -10)
+scale = Vector2(4.9999976, 4.9999976)
 shape = SubResource("RectangleShape2D_jb7p7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_dpga1")
+
+[connection signal="trash_erased" from="Vacuum" to="." method="_on_vacuum_trash_erased"]
+[connection signal="body_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_entered"]

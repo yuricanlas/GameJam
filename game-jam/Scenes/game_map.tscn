@@ -24,6 +24,7 @@ one_shot = true
 scale = Vector2(0.75, 0.75)
 
 [node name="CharacterBody2D" parent="." unique_id=212031758 instance=ExtResource("5_mue85")]
+trash_tile = ExtResource("2_c4nuu")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
 zoom = Vector2(2, 2)
@@ -50,3 +51,4 @@ script = ExtResource("5_3qyi3")
 [connection signal="trash_removed" from="." to="CharacterBody2D/Camera2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/Camera2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="trash_erased" from="CharacterBody2D" to="." method="add_cleaned"]

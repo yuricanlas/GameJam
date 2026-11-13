@@ -6,6 +6,9 @@ extends CharacterBody2D
 @export var max_health: int = 100
 @export var speed: float = 200.0
 
+@export var trash_tile: PackedScene
+
+signal trash_erased
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,3 +33,6 @@ func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_dir * speed
 	move_and_slide()
+
+func _on_vacuum_trash_erased() -> void:
+	emit_signal("trash_erased")
