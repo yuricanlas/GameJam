@@ -2,7 +2,7 @@
 
 ### Description
 
-You are an astronaut who has been hired by the government to clean the moon in preparation for the development of new data centres. While cleaning, you discover unknown life attempting to stop you from completing your mission...
+You are an astronaut who has been hired by the government to clean the moon in preparation for the development of new data centres. While cleaning, you discover unknown life attempting to stop you from completing your mission....
 
 ### How to run
 
@@ -28,3 +28,4 @@ https://grimygraphix.itch.io/trashville
 
 Moonbase: Used for the moon map
 https://jitsukoan.itch.io/moonbase
+- 
