@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bm0jpvhyaca80" path="res://Scenes/trash_tile.tscn" id="2_c4nuu"]
 [ext_resource type="Script" uid="uid://cmdkwwx7m5kla" path="res://Scripts/trash_display.gd" id="4_d8w4w"]
 [ext_resource type="Script" uid="uid://dk2ddf5dsn0m1" path="res://Scenes/money_display.gd" id="5_3qyi3"]
-[ext_resource type="PackedScene" uid="uid://ds4xp85mt4mbk" path="res://Scenes/Player.tscn" id="5_mue85"]
+[ext_resource type="PackedScene" uid="uid://ds4xp85mt4mbk" path="res://Scenes/player.tscn" id="5_mue85"]
 [ext_resource type="PackedScene" uid="uid://deydb4o744t64" path="res://Scenes/base.tscn" id="6_rlp0x"]
+[ext_resource type="PackedScene" uid="uid://dm8kpl2q3c7nw" path="res://Scenes/mob.tscn" id="8_vs6hg"]
+[ext_resource type="Script" uid="uid://beabnagy5tkgv" path="res://Scripts/Enemy.gd" id="9_v8ky0"]
 
 [node name="GameMap" type="Node2D" unique_id=728196909]
 script = ExtResource("1_c4nuu")
@@ -24,6 +26,7 @@ one_shot = true
 scale = Vector2(0.75, 0.75)
 
 [node name="CharacterBody2D" parent="." unique_id=212031758 instance=ExtResource("5_mue85")]
+position = Vector2(23, 151)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D" unique_id=284482041]
 layer = 5
@@ -46,6 +49,11 @@ script = ExtResource("5_3qyi3")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
 zoom = Vector2(2, 2)
+
+[node name="mob" parent="." unique_id=1916443741 instance=ExtResource("8_vs6hg")]
+position = Vector2(-128, 96)
+disable_mode = 2
+script = ExtResource("9_v8ky0")
 
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
