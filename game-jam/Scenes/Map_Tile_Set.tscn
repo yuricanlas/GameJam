@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c7yfpuso386yv"]
+
+[ext_resource type="Texture2D" uid="uid://pncpi1pcff7q" path="res://Assets/Micro Space Demo/Moon tiles.png" id="1_x0upp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lreug"]
+texture = ExtResource("1_x0upp")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.0990963, 8, 0.0990963, 8, 8, -8, 8)
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_1bnwb"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lreug")
+
+[node name="TileSet" type="TileMapLayer" unique_id=507486705]
+tile_set = SubResource("TileSet_1bnwb")
