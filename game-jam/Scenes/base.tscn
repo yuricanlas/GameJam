@@ -2274,6 +2274,8 @@ position = Vector2(385.5, 199.5)
 shape = SubResource("RectangleShape2D_i7cro")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=2016791469]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=863177598]
 light_mask = 2
