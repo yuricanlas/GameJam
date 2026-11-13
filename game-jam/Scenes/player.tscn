@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ds4xp85mt4mbk"]
+[gd_scene format=3 uid="uid://j54lupoylhq8"]
 
-[ext_resource type="Script" uid="uid://irxrm6xfo5d8" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://bah3bm0kd2o6o" path="res://Scripts/weapon.gd" id="1_kyqiw"]
 [ext_resource type="PackedScene" uid="uid://bepa8fa8reuec" path="res://Scenes/weapon.tscn" id="1_rpqav"]
 [ext_resource type="Script" uid="uid://b8sva7ag8e2du" path="res://Scripts/vacuum.gd" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://cflml0wicge4u" path="res://Assets/Player/down_idle.png" id="4_x3wgy"]
@@ -203,7 +203,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=212031758]
-script = ExtResource("1_cvnsp")
+script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147911024]
 position = Vector2(9, 6.5)
