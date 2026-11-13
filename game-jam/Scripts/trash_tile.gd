@@ -1,6 +1,5 @@
 extends TileMapLayer
 
-
 var level = TrashStats.level
 
 # Called when the node enters the scene tree for the first time.

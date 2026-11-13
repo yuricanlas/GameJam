@@ -882,6 +882,7 @@ texture = ExtResource("1_x0upp")
 15:21/0 = 0
 16:21/0 = 0
 17:21/0 = 0
+17:21/0/custom_data_0 = 1
 18:21/0 = 0
 19:21/0 = 0
 20:21/0 = 0
@@ -1365,6 +1366,8 @@ texture = ExtResource("1_x0upp")
 
 [sub_resource type="TileSet" id="TileSet_x0upp"]
 physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Zone"
+custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_lreug")
 
 [node name="MapTileSet" type="TileMapLayer" unique_id=507486705]
