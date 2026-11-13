@@ -1,0 +1,2061 @@
+{
+ "pack": "Sci-Fi Space Station Tileset (Free Demo)",
+ "tile": 16,
+ "scales": [
+  "x1",
+  "x2",
+  "x4"
+ ],
+ "pivot": "objects and characters: bottom centre of the canvas stands on the ground; tiles: 16 x 16 grid",
+ "tilesheets": [
+  {
+   "name": "floors",
+   "sheet": "tiles/floors.png",
+   "columns": 4,
+   "rows": 4,
+   "layout": "one floor per row, 4 variants",
+   "row_names": [
+    "plate_steel",
+    "plate_dark",
+    "clean_white",
+    "lit_cyan"
+   ]
+  },
+  {
+   "name": "walls",
+   "sheet": "tiles/walls.png",
+   "columns": 4,
+   "rows": 3,
+   "layout": "one wall per row: upper, upper with ceiling shadow, lower with skirting, lower with vent. Stack an upper tile over a lower tile for a 2-tile-high wall face",
+   "row_names": [
+    "panel_steel",
+    "lit_cyan",
+    "window_space"
+   ]
+  },
+  {
+   "name": "floor_markings",
+   "sheet": "tiles/floor_markings.png",
+   "columns": 8,
+   "rows": 7,
+   "layout": "overlays with a transparent background, row-major, names in order; pad_0..pad_8 make a 3 x 3 landing pad",
+   "names": [
+    "hazard_edge_h",
+    "hazard_edge_v",
+    "hazard_corner",
+    "line_h",
+    "line_v",
+    "line_corner",
+    "arrow_up",
+    "arrow_down",
+    "arrow_left",
+    "arrow_right",
+    "chevron_up",
+    "chevron_down",
+    "chevron_left",
+    "chevron_right",
+    "num_0",
+    "num_1",
+    "num_2",
+    "num_3",
+    "num_4",
+    "num_5",
+    "num_6",
+    "num_7",
+    "num_8",
+    "num_9",
+    "sector_A",
+    "sector_B",
+    "sector_C",
+    "sector_D",
+    "sector_E",
+    "sector_F",
+    "warning",
+    "radiation",
+    "exit",
+    "floor_light_h",
+    "floor_light_v",
+    "drain",
+    "scorch",
+    "oil_stain",
+    "crack",
+    "teleport_ring",
+    "pad_0",
+    "pad_1",
+    "pad_2",
+    "pad_3",
+    "pad_4",
+    "pad_5",
+    "pad_6",
+    "pad_7",
+    "pad_8"
+   ]
+  }
+ ],
+ "autotiles": [
+  {
+   "name": "wall_tops_steel",
+   "terrains": [
+    "wall top",
+    "empty"
+   ],
+   "sheet": "tiles/wall_tops_steel.png",
+   "columns": 8,
+   "tiles": 48,
+   "layout": "0-46: 47-tile blob of the wall top (thick top edge of walls seen from above), 47: fill",
+   "godot": "godot/wall_tops_steel.tres",
+   "tiled": "tiled/wall_tops_steel.tsx"
+  },
+  {
+   "name": "floor_on_space",
+   "terrains": [
+    "station floor",
+    "space"
+   ],
+   "sheet": "tiles/floor_on_space.png",
+   "columns": 8,
+   "tiles": 54,
+   "layout": "0-46: 47-tile blob of the first terrain over the second, 47-49: fills of the first, 50-53: fills of the second",
+   "godot": "godot/floor_on_space.tres",
+   "tiled": "tiled/floor_on_space.tsx"
+  }
+ ],
+ "conduits": [],
+ "animated_tiles": [],
+ "objects": [
+  {
+   "name": "captain_chair_navy_down",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/captain_chair_navy_down.png"
+  },
+  {
+   "name": "crew_seat_navy_down",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/crew_seat_navy_down.png"
+  },
+  {
+   "name": "captain_chair_navy_up",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/captain_chair_navy_up.png"
+  },
+  {
+   "name": "crew_seat_navy_up",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/crew_seat_navy_up.png"
+  },
+  {
+   "name": "captain_chair_navy_left",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/captain_chair_navy_left.png"
+  },
+  {
+   "name": "crew_seat_navy_left",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/crew_seat_navy_left.png"
+  },
+  {
+   "name": "captain_chair_navy_right",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/captain_chair_navy_right.png"
+  },
+  {
+   "name": "crew_seat_navy_right",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/crew_seat_navy_right.png"
+  },
+  {
+   "name": "console_dark_cyan",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/bridge/console_dark_cyan.png"
+  },
+  {
+   "name": "console_wide_dark_cyan",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/bridge/console_wide_dark_cyan.png"
+  },
+  {
+   "name": "desk_console_dark_cyan",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/bridge/desk_console_dark_cyan.png"
+  },
+  {
+   "name": "lab_bench_white_lit",
+   "theme": "laboratory",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/laboratory/lab_bench_white_lit.png"
+  },
+  {
+   "name": "lab_counter_white_lit",
+   "theme": "laboratory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/laboratory/lab_counter_white_lit.png"
+  },
+  {
+   "name": "specimen_tank_green_empty",
+   "theme": "laboratory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/laboratory/specimen_tank_green_empty.png"
+  },
+  {
+   "name": "specimen_tank_green_embryo",
+   "theme": "laboratory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/laboratory/specimen_tank_green_embryo.png"
+  },
+  {
+   "name": "specimen_tank_green_plant",
+   "theme": "laboratory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/laboratory/specimen_tank_green_plant.png"
+  },
+  {
+   "name": "specimen_tank_green_brain",
+   "theme": "laboratory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/laboratory/specimen_tank_green_brain.png"
+  },
+  {
+   "name": "microscope",
+   "theme": "laboratory",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/laboratory/microscope.png"
+  },
+  {
+   "name": "flask_green",
+   "theme": "laboratory",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/laboratory/flask_green.png"
+  },
+  {
+   "name": "med_bed_teal",
+   "theme": "medbay",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/medbay/med_bed_teal.png"
+  },
+  {
+   "name": "med_pod_cyan_occupied",
+   "theme": "medbay",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/medbay/med_pod_cyan_occupied.png"
+  },
+  {
+   "name": "ship_fighter_white_down",
+   "theme": "hangar",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/hangar/ship_fighter_white_down.png"
+  },
+  {
+   "name": "ship_fighter_white_up",
+   "theme": "hangar",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/hangar/ship_fighter_white_up.png"
+  },
+  {
+   "name": "ship_fighter_white_left",
+   "theme": "hangar",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/hangar/ship_fighter_white_left.png"
+  },
+  {
+   "name": "ship_fighter_white_right",
+   "theme": "hangar",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/hangar/ship_fighter_white_right.png"
+  },
+  {
+   "name": "cargo_container_orange",
+   "theme": "hangar",
+   "layer": "floor",
+   "w": 32,
+   "h": 48,
+   "file": "objects/hangar/cargo_container_orange.png"
+  },
+  {
+   "name": "reactor_core_cyan_off",
+   "theme": "reactor",
+   "layer": "floor",
+   "w": 48,
+   "h": 64,
+   "file": "objects/reactor/reactor_core_cyan_off.png"
+  },
+  {
+   "name": "energy_cell_cyan_1",
+   "theme": "reactor",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/reactor/energy_cell_cyan_1.png"
+  },
+  {
+   "name": "energy_cell_cyan_2",
+   "theme": "reactor",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/reactor/energy_cell_cyan_2.png"
+  },
+  {
+   "name": "energy_cell_cyan_3",
+   "theme": "reactor",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/reactor/energy_cell_cyan_3.png"
+  },
+  {
+   "name": "energy_cell_cyan_4",
+   "theme": "reactor",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/reactor/energy_cell_cyan_4.png"
+  },
+  {
+   "name": "mess_table_steel",
+   "theme": "mess_hall",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/mess_hall/mess_table_steel.png"
+  },
+  {
+   "name": "mess_table_steel_long",
+   "theme": "mess_hall",
+   "layer": "floor",
+   "w": 48,
+   "h": 32,
+   "file": "objects/mess_hall/mess_table_steel_long.png"
+  },
+  {
+   "name": "mess_table_steel_round",
+   "theme": "mess_hall",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/mess_hall/mess_table_steel_round.png"
+  },
+  {
+   "name": "galley_counter_steel_doors",
+   "theme": "mess_hall",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/mess_hall/galley_counter_steel_doors.png"
+  },
+  {
+   "name": "fridge_steel",
+   "theme": "mess_hall",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "file": "objects/mess_hall/fridge_steel.png"
+  },
+  {
+   "name": "vending_machine_cyan",
+   "theme": "mess_hall",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "file": "objects/mess_hall/vending_machine_cyan.png"
+  },
+  {
+   "name": "food_tray_amber",
+   "theme": "mess_hall",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/mess_hall/food_tray_amber.png"
+  },
+  {
+   "name": "food_cup_amber",
+   "theme": "mess_hall",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/mess_hall/food_cup_amber.png"
+  },
+  {
+   "name": "food_cup_green",
+   "theme": "mess_hall",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/mess_hall/food_cup_green.png"
+  },
+  {
+   "name": "food_cup_red",
+   "theme": "mess_hall",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/mess_hall/food_cup_red.png"
+  },
+  {
+   "name": "food_cup_violet",
+   "theme": "mess_hall",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/mess_hall/food_cup_violet.png"
+  },
+  {
+   "name": "bunk_bed_navy_white",
+   "theme": "crew_quarters",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "file": "objects/crew_quarters/bunk_bed_navy_white.png"
+  },
+  {
+   "name": "bed_single_navy_white",
+   "theme": "crew_quarters",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/crew_quarters/bed_single_navy_white.png"
+  },
+  {
+   "name": "locker_steel_cyan",
+   "theme": "crew_quarters",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "file": "objects/crew_quarters/locker_steel_cyan.png"
+  },
+  {
+   "name": "rug_navy_rect",
+   "theme": "crew_quarters",
+   "layer": "rug",
+   "w": 32,
+   "h": 16,
+   "file": "objects/crew_quarters/rug_navy_rect.png"
+  },
+  {
+   "name": "wall_lamp_cyan_on",
+   "theme": "crew_quarters",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "file": "objects/crew_quarters/wall_lamp_cyan_on.png"
+  },
+  {
+   "name": "cryo_pod_cyan_crew",
+   "theme": "cryo_bay",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/cryo_bay/cryo_pod_cyan_crew.png"
+  },
+  {
+   "name": "weapon_rack_dark_rifles",
+   "theme": "armory",
+   "layer": "floor",
+   "w": 32,
+   "h": 48,
+   "file": "objects/armory/weapon_rack_dark_rifles.png"
+  },
+  {
+   "name": "weapon_rack_dark_armor",
+   "theme": "armory",
+   "layer": "floor",
+   "w": 32,
+   "h": 48,
+   "file": "objects/armory/weapon_rack_dark_armor.png"
+  },
+  {
+   "name": "armor_stand_3a5a8a",
+   "theme": "armory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/armory/armor_stand_3a5a8a.png"
+  },
+  {
+   "name": "armor_stand_3a5a8a_no_helmet",
+   "theme": "armory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/armory/armor_stand_3a5a8a_no_helmet.png"
+  },
+  {
+   "name": "pistol_5a6478",
+   "theme": "armory",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/armory/pistol_5a6478.png"
+  },
+  {
+   "name": "rifle_5a6478",
+   "theme": "armory",
+   "layer": "top",
+   "w": 16,
+   "h": 16,
+   "file": "objects/armory/rifle_5a6478.png"
+  },
+  {
+   "name": "pot_fern_white",
+   "theme": "greenhouse",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/greenhouse/pot_fern_white.png"
+  },
+  {
+   "name": "planter_alien_bulb",
+   "theme": "greenhouse",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/greenhouse/planter_alien_bulb.png"
+  },
+  {
+   "name": "crate_small_orange",
+   "theme": "cargo_bay",
+   "layer": "floor",
+   "w": 16,
+   "h": 16,
+   "file": "objects/cargo_bay/crate_small_orange.png"
+  },
+  {
+   "name": "crate_stack_orange",
+   "theme": "cargo_bay",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/cargo_bay/crate_stack_orange.png"
+  },
+  {
+   "name": "crate_small_grey",
+   "theme": "cargo_bay",
+   "layer": "floor",
+   "w": 16,
+   "h": 16,
+   "file": "objects/cargo_bay/crate_small_grey.png"
+  },
+  {
+   "name": "crate_large_grey",
+   "theme": "cargo_bay",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/cargo_bay/crate_large_grey.png"
+  },
+  {
+   "name": "crate_large_grey_tagged",
+   "theme": "cargo_bay",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/cargo_bay/crate_large_grey_tagged.png"
+  },
+  {
+   "name": "barrel_fuel_orange",
+   "theme": "cargo_bay",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/cargo_bay/barrel_fuel_orange.png"
+  },
+  {
+   "name": "barrel_coolant_blue",
+   "theme": "cargo_bay",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/cargo_bay/barrel_coolant_blue.png"
+  },
+  {
+   "name": "server_rack_dark_cyan",
+   "theme": "server_room",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "file": "objects/server_room/server_rack_dark_cyan.png"
+  },
+  {
+   "name": "sofa_2seat_navy_down",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/observation_lounge/sofa_2seat_navy_down.png"
+  },
+  {
+   "name": "sofa_2seat_navy_up",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "file": "objects/observation_lounge/sofa_2seat_navy_up.png"
+  },
+  {
+   "name": "sofa_2seat_navy_left",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "file": "objects/observation_lounge/sofa_2seat_navy_left.png"
+  },
+  {
+   "name": "sofa_2seat_navy_right",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "file": "objects/observation_lounge/sofa_2seat_navy_right.png"
+  },
+  {
+   "name": "sofa_3seat_navy_down",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 48,
+   "h": 32,
+   "file": "objects/observation_lounge/sofa_3seat_navy_down.png"
+  },
+  {
+   "name": "sofa_3seat_navy_up",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 48,
+   "h": 32,
+   "file": "objects/observation_lounge/sofa_3seat_navy_up.png"
+  },
+  {
+   "name": "sofa_3seat_navy_left",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 64,
+   "file": "objects/observation_lounge/sofa_3seat_navy_left.png"
+  },
+  {
+   "name": "sofa_3seat_navy_right",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 64,
+   "file": "objects/observation_lounge/sofa_3seat_navy_right.png"
+  },
+  {
+   "name": "pod_chair_navy_down",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/observation_lounge/pod_chair_navy_down.png"
+  },
+  {
+   "name": "pod_chair_navy_up",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/observation_lounge/pod_chair_navy_up.png"
+  },
+  {
+   "name": "pod_chair_navy_left",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/observation_lounge/pod_chair_navy_left.png"
+  },
+  {
+   "name": "pod_chair_navy_right",
+   "theme": "observation_lounge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/observation_lounge/pod_chair_navy_right.png"
+  },
+  {
+   "name": "auto_door_steel_cyan_closed",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 32,
+   "file": "objects/decor/auto_door_steel_cyan_closed.png"
+  },
+  {
+   "name": "railing_steel_h",
+   "theme": "decor",
+   "layer": "floor",
+   "w": 16,
+   "h": 16,
+   "file": "objects/decor/railing_steel_h.png"
+  },
+  {
+   "name": "railing_steel_v",
+   "theme": "decor",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/decor/railing_steel_v.png"
+  },
+  {
+   "name": "window_32_stars",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 32,
+   "h": 32,
+   "file": "objects/decor/window_32_stars.png"
+  },
+  {
+   "name": "window_16_stars",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 32,
+   "file": "objects/decor/window_16_stars.png"
+  },
+  {
+   "name": "window_32_planet",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 32,
+   "h": 32,
+   "file": "objects/decor/window_32_planet.png"
+  },
+  {
+   "name": "sign_bridge_cyan",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "file": "objects/decor/sign_bridge_cyan.png"
+  },
+  {
+   "name": "sign_medbay_cyan",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "file": "objects/decor/sign_medbay_cyan.png"
+  },
+  {
+   "name": "sign_reactor_cyan",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "file": "objects/decor/sign_reactor_cyan.png"
+  },
+  {
+   "name": "sign_cryo_cyan",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "file": "objects/decor/sign_cryo_cyan.png"
+  },
+  {
+   "name": "sign_armory_cyan",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "file": "objects/decor/sign_armory_cyan.png"
+  },
+  {
+   "name": "wall_screen_graph",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "file": "objects/decor/wall_screen_graph.png"
+  },
+  {
+   "name": "fire_extinguisher",
+   "theme": "decor",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "file": "objects/decor/fire_extinguisher.png"
+  }
+ ],
+ "animations": [
+  {
+   "name": "console_dark_cyan_working",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "strip": "animations/bridge/console_dark_cyan_working_strip.png",
+   "frames_folder": "animations/bridge/console_dark_cyan_working/"
+  },
+  {
+   "name": "holo_table_map",
+   "theme": "bridge",
+   "layer": "floor",
+   "w": 32,
+   "h": 32,
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "strip": "animations/bridge/holo_table_map_strip.png",
+   "frames_folder": "animations/bridge/holo_table_map/"
+  },
+  {
+   "name": "specimen_tank_green_embryo_bubbling",
+   "theme": "laboratory",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "strip": "animations/laboratory/specimen_tank_green_embryo_bubbling_strip.png",
+   "frames_folder": "animations/laboratory/specimen_tank_green_embryo_bubbling/"
+  },
+  {
+   "name": "reactor_core_cyan",
+   "theme": "reactor",
+   "layer": "floor",
+   "w": 48,
+   "h": 64,
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "strip": "animations/reactor/reactor_core_cyan_strip.png",
+   "frames_folder": "animations/reactor/reactor_core_cyan/"
+  },
+  {
+   "name": "cryo_pod_cyan_frosting",
+   "theme": "cryo_bay",
+   "layer": "floor",
+   "w": 16,
+   "h": 32,
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "strip": "animations/cryo_bay/cryo_pod_cyan_frosting_strip.png",
+   "frames_folder": "animations/cryo_bay/cryo_pod_cyan_frosting/"
+  },
+  {
+   "name": "server_rack_dark_cyan_blinking",
+   "theme": "server_room",
+   "layer": "floor",
+   "w": 16,
+   "h": 48,
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "strip": "animations/server_room/server_rack_dark_cyan_blinking_strip.png",
+   "frames_folder": "animations/server_room/server_rack_dark_cyan_blinking/"
+  },
+  {
+   "name": "auto_door_steel_cyan",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 32,
+   "frames": 6,
+   "fps": 8,
+   "loop": true,
+   "strip": "animations/decor/auto_door_steel_cyan_strip.png",
+   "frames_folder": "animations/decor/auto_door_steel_cyan/"
+  },
+  {
+   "name": "alarm_beacon_red",
+   "theme": "decor",
+   "layer": "wall",
+   "w": 16,
+   "h": 16,
+   "frames": 4,
+   "fps": 8,
+   "loop": true,
+   "strip": "animations/decor/alarm_beacon_red_strip.png",
+   "frames_folder": "animations/decor/alarm_beacon_red/"
+  }
+ ],
+ "characters": [
+  {
+   "name": "captain",
+   "kind": "crew",
+   "parts": {
+    "hair": "side_part",
+    "top": "uniform",
+    "bottom": "pants",
+    "shoes": "boots",
+    "acc": "none"
+   },
+   "colors": {
+    "skin": "#ecc09a",
+    "hair": "#b8b4bc",
+    "top": "#2a3458",
+    "top2": "#e8c050",
+    "bottom": "#20283e",
+    "shoes": "#1a1c26",
+    "acc": "#e8c050"
+   },
+   "animations": [
+    {
+     "name": "idle_down",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/captain/captain_idle_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_down",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_walk_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_down",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/captain/captain_interact_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_down",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_shoot_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_down",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_hurt_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_down",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_death_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_left",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/captain/captain_idle_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_left",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_walk_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_left",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/captain/captain_interact_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_left",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_shoot_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_left",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_hurt_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_left",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_death_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_right",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/captain/captain_idle_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_right",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_walk_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_right",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/captain/captain_interact_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_right",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_shoot_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_right",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_hurt_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_right",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_death_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_up",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/captain/captain_idle_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_up",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_walk_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_up",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/captain/captain_interact_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_up",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/captain/captain_shoot_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_up",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_hurt_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_up",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/captain/captain_death_up.png",
+     "w": 16,
+     "h": 32
+    }
+   ],
+   "sheet": "characters/crew/captain/captain_sheet.png",
+   "frame": [
+    16,
+    32
+   ],
+   "sheet_layout": "rows: (down, left, right, up) x (idle 4, walk 6, interact 4, shoot 4, hurt 3, death 6); 16 x 32 frames, 6 columns",
+   "godot": "godot/spriteframes/captain.tres"
+  },
+  {
+   "name": "engineer",
+   "kind": "crew",
+   "parts": {
+    "hair": "buzz",
+    "top": "engineer",
+    "bottom": "cargo",
+    "shoes": "mag_boots",
+    "acc": "goggles"
+   },
+   "colors": {
+    "skin": "#a86e48",
+    "hair": "#6a4430",
+    "top": "#d8803a",
+    "top2": "#3a3e4c",
+    "bottom": "#4a5266",
+    "shoes": "#2a2a32",
+    "acc": "#4a5266"
+   },
+   "animations": [
+    {
+     "name": "idle_down",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/engineer/engineer_idle_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_down",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_walk_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_down",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/engineer/engineer_interact_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_down",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_shoot_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_down",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_hurt_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_down",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_death_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_left",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/engineer/engineer_idle_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_left",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_walk_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_left",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/engineer/engineer_interact_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_left",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_shoot_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_left",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_hurt_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_left",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_death_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_right",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/engineer/engineer_idle_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_right",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_walk_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_right",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/engineer/engineer_interact_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_right",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_shoot_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_right",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_hurt_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_right",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_death_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_up",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/crew/engineer/engineer_idle_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_up",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_walk_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_up",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/crew/engineer/engineer_interact_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_up",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/crew/engineer/engineer_shoot_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_up",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_hurt_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_up",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/crew/engineer/engineer_death_up.png",
+     "w": 16,
+     "h": 32
+    }
+   ],
+   "sheet": "characters/crew/engineer/engineer_sheet.png",
+   "frame": [
+    16,
+    32
+   ],
+   "sheet_layout": "rows: (down, left, right, up) x (idle 4, walk 6, interact 4, shoot 4, hurt 3, death 6); 16 x 32 frames, 6 columns",
+   "godot": "godot/spriteframes/engineer.tres"
+  },
+  {
+   "name": "grey_alien",
+   "kind": "organic",
+   "description": "Grey alien with a ray gun",
+   "animations": [
+    {
+     "name": "idle_down",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_idle_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_down",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_walk_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_down",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_interact_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_down",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_shoot_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_down",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_hurt_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_down",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_death_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_left",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_idle_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_left",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_walk_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_left",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_interact_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_left",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_shoot_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_left",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_hurt_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_left",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_death_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_right",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_idle_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_right",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_walk_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_right",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_interact_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_right",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_shoot_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_right",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_hurt_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_right",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_death_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_up",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_idle_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_up",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_walk_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_up",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_interact_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_up",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_shoot_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_up",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_hurt_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_up",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/grey_alien/grey_alien_death_up.png",
+     "w": 16,
+     "h": 32
+    }
+   ],
+   "sheet": "characters/aliens_robots/grey_alien/grey_alien_sheet.png",
+   "frame": [
+    16,
+    32
+   ],
+   "sheet_layout": "rows: (down, left, right, up) x (idle 4, walk 6, interact 4, shoot 4, hurt 3, death 6); 16 x 32 frames, 6 columns",
+   "godot": "godot/spriteframes/grey_alien.tres"
+  },
+  {
+   "name": "security_robot",
+   "kind": "robot",
+   "description": "Biped security robot with twin lasers",
+   "animations": [
+    {
+     "name": "idle_down",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/security_robot/security_robot_idle_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_down",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_walk_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_down",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/security_robot/security_robot_interact_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_down",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_shoot_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_down",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_hurt_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_down",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_death_down.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_left",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/security_robot/security_robot_idle_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_left",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_walk_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_left",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/security_robot/security_robot_interact_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_left",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_shoot_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_left",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_hurt_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_left",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_death_left.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_right",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/security_robot/security_robot_idle_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_right",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_walk_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_right",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/security_robot/security_robot_interact_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_right",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_shoot_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_right",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_hurt_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_right",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_death_right.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "idle_up",
+     "frames": 4,
+     "fps": 4,
+     "strip": "characters/aliens_robots/security_robot/security_robot_idle_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "walk_up",
+     "frames": 6,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_walk_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "interact_up",
+     "frames": 4,
+     "fps": 6,
+     "strip": "characters/aliens_robots/security_robot/security_robot_interact_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "shoot_up",
+     "frames": 4,
+     "fps": 10,
+     "strip": "characters/aliens_robots/security_robot/security_robot_shoot_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "hurt_up",
+     "frames": 3,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_hurt_up.png",
+     "w": 16,
+     "h": 32
+    },
+    {
+     "name": "death_up",
+     "frames": 6,
+     "fps": 8,
+     "strip": "characters/aliens_robots/security_robot/security_robot_death_up.png",
+     "w": 16,
+     "h": 32
+    }
+   ],
+   "sheet": "characters/aliens_robots/security_robot/security_robot_sheet.png",
+   "frame": [
+    16,
+    32
+   ],
+   "sheet_layout": "rows: (down, left, right, up) x (idle 4, walk 6, interact 4, shoot 4, hurt 3, death 6); 16 x 32 frames, 6 columns",
+   "godot": "godot/spriteframes/security_robot.tres"
+  }
+ ],
+ "themes": {
+  "bridge": "Command bridge",
+  "laboratory": "Laboratory",
+  "medbay": "Medbay",
+  "hangar": "Hangar",
+  "reactor": "Reactor",
+  "mess_hall": "Mess hall",
+  "crew_quarters": "Crew quarters",
+  "cryo_bay": "Cryo bay",
+  "armory": "Armory",
+  "greenhouse": "Greenhouse",
+  "engine_room": "Engine room",
+  "cargo_bay": "Cargo bay",
+  "server_room": "Server & comms room",
+  "observation_lounge": "Observation lounge",
+  "security": "Security & brig",
+  "decor": "Shared station decor (doors, signs, windows, lights, crates)"
+ },
+ "blob_masks": [
+  {
+   "index": 0,
+   "mask": 0
+  },
+  {
+   "index": 1,
+   "mask": 1
+  },
+  {
+   "index": 2,
+   "mask": 4
+  },
+  {
+   "index": 3,
+   "mask": 5
+  },
+  {
+   "index": 4,
+   "mask": 7
+  },
+  {
+   "index": 5,
+   "mask": 16
+  },
+  {
+   "index": 6,
+   "mask": 17
+  },
+  {
+   "index": 7,
+   "mask": 20
+  },
+  {
+   "index": 8,
+   "mask": 21
+  },
+  {
+   "index": 9,
+   "mask": 23
+  },
+  {
+   "index": 10,
+   "mask": 28
+  },
+  {
+   "index": 11,
+   "mask": 29
+  },
+  {
+   "index": 12,
+   "mask": 31
+  },
+  {
+   "index": 13,
+   "mask": 64
+  },
+  {
+   "index": 14,
+   "mask": 65
+  },
+  {
+   "index": 15,
+   "mask": 68
+  },
+  {
+   "index": 16,
+   "mask": 69
+  },
+  {
+   "index": 17,
+   "mask": 71
+  },
+  {
+   "index": 18,
+   "mask": 80
+  },
+  {
+   "index": 19,
+   "mask": 81
+  },
+  {
+   "index": 20,
+   "mask": 84
+  },
+  {
+   "index": 21,
+   "mask": 85
+  },
+  {
+   "index": 22,
+   "mask": 87
+  },
+  {
+   "index": 23,
+   "mask": 92
+  },
+  {
+   "index": 24,
+   "mask": 93
+  },
+  {
+   "index": 25,
+   "mask": 95
+  },
+  {
+   "index": 26,
+   "mask": 112
+  },
+  {
+   "index": 27,
+   "mask": 113
+  },
+  {
+   "index": 28,
+   "mask": 116
+  },
+  {
+   "index": 29,
+   "mask": 117
+  },
+  {
+   "index": 30,
+   "mask": 119
+  },
+  {
+   "index": 31,
+   "mask": 124
+  },
+  {
+   "index": 32,
+   "mask": 125
+  },
+  {
+   "index": 33,
+   "mask": 127
+  },
+  {
+   "index": 34,
+   "mask": 193
+  },
+  {
+   "index": 35,
+   "mask": 197
+  },
+  {
+   "index": 36,
+   "mask": 199
+  },
+  {
+   "index": 37,
+   "mask": 209
+  },
+  {
+   "index": 38,
+   "mask": 213
+  },
+  {
+   "index": 39,
+   "mask": 215
+  },
+  {
+   "index": 40,
+   "mask": 221
+  },
+  {
+   "index": 41,
+   "mask": 223
+  },
+  {
+   "index": 42,
+   "mask": 241
+  },
+  {
+   "index": 43,
+   "mask": 245
+  },
+  {
+   "index": 44,
+   "mask": 247
+  },
+  {
+   "index": 45,
+   "mask": 253
+  },
+  {
+   "index": 46,
+   "mask": 255
+  }
+ ],
+ "tile_count": 179,
+ "mask_bits": "N=1 NE=2 E=4 SE=8 S=16 SW=32 W=64 NW=128 (neighbours of the same terrain as the centre)",
+ "rpgmaker": {
+  "tilesets": [],
+  "characters": [],
+  "objects": []
+ },
+ "duplicates_skipped": 153,
+ "duplicates": {
+  "objects/mess_hall/chair_steel_navy_down.png": "objects/bridge/crew_seat_navy_down.png",
+  "objects/mess_hall/chair_steel_navy_up.png": "objects/bridge/crew_seat_navy_up.png",
+  "objects/mess_hall/chair_steel_navy_left.png": "objects/bridge/crew_seat_navy_left.png",
+  "objects/mess_hall/chair_steel_navy_right.png": "objects/bridge/crew_seat_navy_right.png",
+  "objects/mess_hall/chair_steel_red_down.png": "objects/bridge/crew_seat_red_down.png",
+  "objects/mess_hall/chair_steel_red_up.png": "objects/bridge/crew_seat_red_up.png",
+  "objects/mess_hall/chair_steel_red_left.png": "objects/bridge/crew_seat_red_left.png",
+  "objects/mess_hall/chair_steel_red_right.png": "objects/bridge/crew_seat_red_right.png",
+  "objects/mess_hall/chair_steel_teal_down.png": "objects/bridge/crew_seat_teal_down.png",
+  "objects/mess_hall/chair_steel_teal_up.png": "objects/bridge/crew_seat_teal_up.png",
+  "objects/mess_hall/chair_steel_teal_left.png": "objects/bridge/crew_seat_teal_left.png",
+  "objects/mess_hall/chair_steel_teal_right.png": "objects/bridge/crew_seat_teal_right.png",
+  "objects/mess_hall/chair_steel_amber_down.png": "objects/bridge/crew_seat_amber_down.png",
+  "objects/mess_hall/chair_steel_amber_up.png": "objects/bridge/crew_seat_amber_up.png",
+  "objects/mess_hall/chair_steel_amber_left.png": "objects/bridge/crew_seat_amber_left.png",
+  "objects/mess_hall/chair_steel_amber_right.png": "objects/bridge/crew_seat_amber_right.png",
+  "objects/crew_quarters/locker_double_white_amber.png": "objects/laboratory/hazmat_locker_white.png",
+  "objects/crew_quarters/locker_double_steel_amber.png": "objects/laboratory/hazmat_locker_steel.png",
+  "objects/crew_quarters/locker_double_dark_amber.png": "objects/laboratory/hazmat_locker_dark.png",
+  "objects/crew_quarters/locker_double_navy_amber.png": "objects/laboratory/hazmat_locker_navy.png",
+  "objects/cryo_bay/cryo_pod_cyan_empty.png": "objects/medbay/med_pod_cyan_empty.png",
+  "objects/cryo_bay/cryo_pod_magenta_empty.png": "objects/medbay/med_pod_magenta_empty.png",
+  "objects/cryo_bay/cryo_pod_amber_empty.png": "objects/medbay/med_pod_amber_empty.png",
+  "objects/cryo_bay/cryo_pod_green_empty.png": "objects/medbay/med_pod_green_empty.png",
+  "objects/cryo_bay/cryo_pod_red_empty.png": "objects/medbay/med_pod_red_empty.png",
+  "objects/cryo_bay/cryo_pod_violet_empty.png": "objects/medbay/med_pod_violet_empty.png",
+  "objects/armory/blade_d4dae4.png": "objects/armory/blade_5a6478.png",
+  "objects/armory/blade_b84848.png": "objects/armory/blade_5a6478.png",
+  "objects/engine_room/thruster_nozzle_amber_cold.png": "objects/engine_room/thruster_nozzle_cyan_cold.png",
+  "objects/engine_room/thruster_nozzle_magenta_cold.png": "objects/engine_room/thruster_nozzle_cyan_cold.png",
+  "objects/engine_room/pipe_counter_dark.png": "objects/reactor/reactor_panel_dark.png",
+  "objects/server_room/mainframe_green_idle.png": "objects/server_room/mainframe_cyan_idle.png",
+  "objects/observation_lounge/pod_chair_red_up.png": "objects/observation_lounge/pod_chair_navy_up.png",
+  "objects/observation_lounge/pod_chair_teal_up.png": "objects/observation_lounge/pod_chair_navy_up.png",
+  "objects/observation_lounge/pod_chair_violet_up.png": "objects/observation_lounge/pod_chair_navy_up.png",
+  "objects/observation_lounge/pod_chair_grey_up.png": "objects/observation_lounge/pod_chair_navy_up.png",
+  "objects/observation_lounge/pod_chair_amber_up.png": "objects/observation_lounge/pod_chair_navy_up.png",
+  "objects/observation_lounge/pod_chair_white_up.png": "objects/observation_lounge/pod_chair_navy_up.png",
+  "objects/observation_lounge/pod_chair_black_up.png": "objects/observation_lounge/pod_chair_navy_up.png",
+  "objects/security/evidence_locker_white.png": "objects/armory/gun_locker_white.png",
+  "objects/security/evidence_locker_steel.png": "objects/armory/gun_locker_steel.png",
+  "objects/security/evidence_locker_dark.png": "objects/armory/gun_locker_dark.png",
+  "objects/security/evidence_locker_navy.png": "objects/armory/gun_locker_navy.png",
+  "objects/decor/sign_observation_cyan.png": "objects/decor/sign_reactor_cyan.png",
+  "objects/decor/sign_observation_amber.png": "objects/decor/sign_reactor_amber.png",
+  "objects/decor/bench_wall_white.png": "objects/mess_hall/bench_white.png",
+  "objects/decor/bench_wall_steel.png": "objects/mess_hall/bench_steel.png",
+  "objects/decor/bench_wall_dark.png": "objects/mess_hall/bench_dark.png",
+  "objects/decor/bench_wall_navy.png": "objects/mess_hall/bench_navy.png",
+  "animations/cryo_bay/cryo_tank_large_cyan_strip.png": "animations/reactor/coolant_tank_cyan_flow_strip.png"
+ }
+}
