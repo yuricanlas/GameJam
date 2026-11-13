@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pncpi1pcff7q"
-path="res://.godot/imported/Moon tiles.png-d0129707459672490dc6a12e63b97da4.ctex"
+uid="uid://dnmxbl8f088qw"
+path="res://.godot/imported/Moon_Tileset.png-43c2bc98645035dc1ed5dbe1f4122bb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Micro Space Demo/Moon tiles.png"
-dest_files=["res://.godot/imported/Moon tiles.png-d0129707459672490dc6a12e63b97da4.ctex"]
+source_file="res://Actual Assets/Player Sprites/Space Tiles/Player Sprites/Space Tiles/Moon_Tileset.png"
+dest_files=["res://.godot/imported/Moon_Tileset.png-43c2bc98645035dc1ed5dbe1f4122bb9.ctex"]
 
 [params]
 

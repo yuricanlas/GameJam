@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6bkwfl3uvm8q"
-path="res://.godot/imported/UI.png-a1691b641f132a776e9a0de5717d839b.ctex"
+uid="uid://cyb7u4irg07ya"
+path="res://.godot/imported/Moon_Tileset_C.png-bb7d58bdd599b39033a2c8c23e0260e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Micro Space Demo/UI.png"
-dest_files=["res://.godot/imported/UI.png-a1691b641f132a776e9a0de5717d839b.ctex"]
+source_file="res://Assets/MoonBase/Moon_Tileset_C.png"
+dest_files=["res://.godot/imported/Moon_Tileset_C.png-bb7d58bdd599b39033a2c8c23e0260e9.ctex"]
 
 [params]
 
