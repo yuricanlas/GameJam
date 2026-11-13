@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxdxwamoskuaq" path="res://Assets/Down_walk2.png" id="5_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpga1"]
-size = Vector2(20, 31)
+size = Vector2(36, 45)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dpga1"]
 animations = [{
@@ -27,7 +27,7 @@ animations = [{
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147911024]
-position = Vector2(1, -0.5)
+position = Vector2(9, 6.5)
 shape = SubResource("RectangleShape2D_dpga1")
 
 [node name="Weapon" parent="." unique_id=758386525 instance=ExtResource("1_rpqav")]
@@ -37,5 +37,6 @@ script = ExtResource("3_gntrk")
 metadata/_custom_type_script = "uid://b8sva7ag8e2du"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
-position = Vector2(1, -1)
+position = Vector2(7.5000005, 5)
+scale = Vector2(1.40625, 1.375)
 sprite_frames = SubResource("SpriteFrames_dpga1")

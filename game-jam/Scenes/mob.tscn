@@ -33,21 +33,23 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_frlhd")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"idle_down",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpsb2"]
-size = Vector2(57, 118)
+size = Vector2(31.25, 61)
 
 [node name="mob" type="CharacterBody2D" unique_id=1916443741]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1149847262]
+position = Vector2(-16.5, -2.750002)
+scale = Vector2(0.546875, 0.48046872)
 sprite_frames = SubResource("SpriteFrames_lpsb2")
 animation = &"idle_down"
-frame_progress = 0.7399886
+frame_progress = 0.09924212
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580376460]
-position = Vector2(0.5, 2)
+position = Vector2(-17, -2)
 shape = SubResource("RectangleShape2D_lpsb2")
