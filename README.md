@@ -22,4 +22,10 @@ Bradley Barrientos, Edrielle Mateo, Kate Nabo, Lase Adeosun, Yuri Canlas
 #### Assets Used:
 Micro Space - Used for the map
 - https://wizard-and-friends.itch.io/micro-space?download
+
+Trashville - Used for the trash
+https://grimygraphix.itch.io/trashville
+
+Moonbase: Used for the moon map
+https://jitsukoan.itch.io/moonbase
 - 
