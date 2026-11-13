@@ -5,6 +5,8 @@ extends Node2D
 @onready var trash_cleaned = 0 # Player will be able to remove trash
 @onready var money = 0
 
+var level = TrashStats.level
+
 signal trash_removed
 
 # Called when the node enters the scene tree for the first time.

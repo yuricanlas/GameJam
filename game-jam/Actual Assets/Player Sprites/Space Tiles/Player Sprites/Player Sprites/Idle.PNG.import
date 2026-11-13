@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctkii02vsygpu"
-path="res://.godot/imported/Astronaut_Left.png-d64d76b73e1017fa43ad445452da072f.ctex"
+uid="uid://browd3tqbma6s"
+path="res://.godot/imported/Idle.PNG-f96a169944c471359efa2d2a8564cdff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actual Assets/Player Sprites/Space Tiles/Player Sprites/Player Sprites/Astronaut_Left.png"
-dest_files=["res://.godot/imported/Astronaut_Left.png-d64d76b73e1017fa43ad445452da072f.ctex"]
+source_file="res://Actual Assets/Player Sprites/Space Tiles/Player Sprites/Player Sprites/Idle.PNG"
+dest_files=["res://.godot/imported/Idle.PNG-f96a169944c471359efa2d2a8564cdff.ctex"]
 
 [params]
 
