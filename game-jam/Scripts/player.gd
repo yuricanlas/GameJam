@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var health : int
 @export var max_health: int = 100
 @export var speed: float = 200.0
+@onready var money = 0
 
 @export var trash_tile: PackedScene
 
