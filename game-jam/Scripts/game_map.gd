@@ -2,8 +2,7 @@ extends Node2D
 
 @onready var tileset: TileMapLayer = $MapTileSet.tile_set
 @onready var total_trash = $TrashTile.get_used_cells().size()
-
-var zones = [1, 2, 3]
+@onready var trash_cleaned = 0 # Player will be able to remove trash
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
