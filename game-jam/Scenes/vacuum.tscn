@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://6xs5wi2aoyoy"]
+
+[ext_resource type="Script" uid="uid://b8sva7ag8e2du" path="res://Scripts/vacuum.gd" id="1_11wm6"]
+
+[node name="Vacuum" type="Node2D" unique_id=1511607697]
+script = ExtResource("1_11wm6")
