@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bm0jpvhyaca80" path="res://Scenes/trash_tile.tscn" id="2_c4nuu"]
 [ext_resource type="Script" uid="uid://cmdkwwx7m5kla" path="res://Scripts/trash_display.gd" id="4_d8w4w"]
 [ext_resource type="Script" uid="uid://dk2ddf5dsn0m1" path="res://Scenes/money_display.gd" id="5_3qyi3"]
-[ext_resource type="PackedScene" uid="uid://c7b63cufplcla" path="res://Scenes/Player.tscn" id="5_mue85"]
+[ext_resource type="PackedScene" uid="uid://ds4xp85mt4mbk" path="res://Scenes/Player.tscn" id="5_mue85"]
 [ext_resource type="PackedScene" uid="uid://deydb4o744t64" path="res://Scenes/base.tscn" id="6_rlp0x"]
 
 [node name="GameMap" type="Node2D" unique_id=728196909]
@@ -43,6 +43,9 @@ offset_right = 135.6
 offset_bottom = -55.999992
 text = "Placeholder Two"
 script = ExtResource("5_3qyi3")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
+zoom = Vector2(2, 2)
 
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
