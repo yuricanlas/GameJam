@@ -33,18 +33,18 @@ zoom = Vector2(2, 2)
 layer = 5
 
 [node name="TrashDisplay" type="Label" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=939468237]
-offset_left = -119.799995
-offset_top = -79.99999
-offset_right = 8.200005
-offset_bottom = -56.999992
+offset_left = -120.0
+offset_top = -54.0
+offset_right = 8.0
+offset_bottom = -31.0
 text = "Placeholder One"
 script = ExtResource("4_d8w4w")
 
 [node name="MoneyDisplay" type="Label" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=395630189]
-offset_left = 7.5999994
-offset_top = -78.99999
-offset_right = 135.6
-offset_bottom = -55.999992
+offset_left = 7.0
+offset_top = -52.0
+offset_right = 135.0
+offset_bottom = -29.0
 text = "Placeholder Two"
 script = ExtResource("5_3qyi3")
 

@@ -8,6 +8,8 @@ signal trash_erased
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	visible = false
+	print(trash_tiles)
 	pass # Replace with function body.
 
 func is_tile_in_tileset(coords: Vector2i) -> bool:
@@ -40,8 +42,14 @@ func upgrade():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if is_tile_in_tileset(body.global_position) and body.level <= strength:
-		trash_tiles.erase_cell(body.global_position)
-		emit_signal("trash_erased")
+	print("Thing Detected")
+	print(body)
+	if body is TileMapLayer:
+		var coords = body.local_to_map(
+			body.to_local(global_position)
+		)
+		print("Tile coordinates: ", coords)
+		body.erase_cell(coords)
 		
+		emit_signal("trash_erased")
 	
