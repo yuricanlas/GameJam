@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://chlabwfrim3ta" path="res://Scripts/game_map.gd" id="1_c4nuu"]
 [ext_resource type="PackedScene" uid="uid://bm0jpvhyaca80" path="res://Scenes/trash_tile.tscn" id="2_c4nuu"]
 [ext_resource type="Script" uid="uid://cmdkwwx7m5kla" path="res://Scripts/trash_display.gd" id="4_d8w4w"]
+[ext_resource type="Script" uid="uid://dk2ddf5dsn0m1" path="res://Scenes/money_display.gd" id="5_3qyi3"]
 
 [node name="GameMap" type="Node2D" unique_id=728196909]
 script = ExtResource("1_c4nuu")
@@ -28,5 +29,12 @@ offset_bottom = 23.0
 text = "Placeholder"
 script = ExtResource("4_d8w4w")
 
+[node name="MoneyDisplay" type="Label" parent="CanvasLayer" unique_id=395630189]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Placeholder"
+script = ExtResource("5_3qyi3")
+
 [connection signal="trash_removed" from="." to="CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
+[connection signal="trash_removed" from="." to="CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
