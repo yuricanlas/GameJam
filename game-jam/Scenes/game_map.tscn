@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bm0jpvhyaca80" path="res://Scenes/trash_tile.tscn" id="2_c4nuu"]
 [ext_resource type="Script" uid="uid://cmdkwwx7m5kla" path="res://Scripts/trash_display.gd" id="4_d8w4w"]
 [ext_resource type="Script" uid="uid://dk2ddf5dsn0m1" path="res://Scenes/money_display.gd" id="5_3qyi3"]
-[ext_resource type="PackedScene" uid="uid://ds4xp85mt4mbk" path="res://Scenes/Player.tscn" id="5_mue85"]
+[ext_resource type="PackedScene" uid="uid://ds4xp85mt4mbk" path="res://Scenes/player.tscn" id="5_mue85"]
 [ext_resource type="PackedScene" uid="uid://deydb4o744t64" path="res://Scenes/base.tscn" id="6_rlp0x"]
 
 [node name="GameMap" type="Node2D" unique_id=728196909]
@@ -25,10 +25,13 @@ scale = Vector2(0.75, 0.75)
 
 [node name="CharacterBody2D" parent="." unique_id=212031758 instance=ExtResource("5_mue85")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D" unique_id=284482041]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
+zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D/Camera2D" unique_id=284482041]
 layer = 5
 
-[node name="TrashDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=939468237]
+[node name="TrashDisplay" type="Label" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=939468237]
 offset_left = -119.799995
 offset_top = -79.99999
 offset_right = 8.200005
@@ -36,7 +39,7 @@ offset_bottom = -56.999992
 text = "Placeholder One"
 script = ExtResource("4_d8w4w")
 
-[node name="MoneyDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=395630189]
+[node name="MoneyDisplay" type="Label" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=395630189]
 offset_left = 7.5999994
 offset_top = -78.99999
 offset_right = 135.6
@@ -44,9 +47,6 @@ offset_bottom = -55.999992
 text = "Placeholder Two"
 script = ExtResource("5_3qyi3")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
-zoom = Vector2(2, 2)
-
-[connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
-[connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
+[connection signal="trash_removed" from="." to="CharacterBody2D/Camera2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
+[connection signal="trash_removed" from="." to="CharacterBody2D/Camera2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

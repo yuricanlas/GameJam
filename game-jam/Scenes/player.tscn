@@ -4,11 +4,57 @@
 [ext_resource type="PackedScene" uid="uid://bepa8fa8reuec" path="res://Scenes/weapon.tscn" id="1_rpqav"]
 [ext_resource type="Script" uid="uid://b8sva7ag8e2du" path="res://Scripts/vacuum.gd" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://d1hbxtfstlpcd" path="res://Assets/Down_walk1.png" id="4_5ixxa"]
-[ext_resource type="Material" uid="uid://dh0faxx5np87y" path="res://Assets/Tornado.tres" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://b664ng3pvp2g5" path="res://Assets/mytronado.png" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dxdxwamoskuaq" path="res://Assets/Down_walk2.png" id="5_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpga1"]
 size = Vector2(20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(0, 7336, 1048, 1048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(1048, 7336, 1048, 1048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(2096, 7336, 1048, 1048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(3144, 7336, 1048, 1048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(4192, 7336, 1048, 1048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jb7p7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gymyn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb7p7"]
+size = Vector2(120, 140.00002)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dpga1"]
 animations = [{
@@ -34,14 +80,24 @@ shape = SubResource("RectangleShape2D_dpga1")
 [node name="Weapon" parent="." unique_id=758386525 instance=ExtResource("1_rpqav")]
 
 [node name="Vacuum" type="Node2D" parent="." unique_id=876870418]
+position = Vector2(30, 2)
+rotation = 1.5707964
+scale = Vector2(0.05, 0.05)
 script = ExtResource("3_gntrk")
 metadata/_custom_type_script = "uid://b8sva7ag8e2du"
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Vacuum" unique_id=1440764778]
-scale = Vector2(10, 10)
-sub_emitter = NodePath(".")
-lifetime = 5.0
-process_material = ExtResource("4_x3wgy")
+[node name="TornadoSprite" type="AnimatedSprite2D" parent="Vacuum" unique_id=1667089168]
+sprite_frames = SubResource("SpriteFrames_jb7p7")
+autoplay = "default"
+frame = 3
+frame_progress = 0.65743315
+
+[node name="Area2D" type="Area2D" parent="Vacuum" unique_id=1541026742]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vacuum/Area2D" unique_id=2025386539]
+position = Vector2(3.4332275e-05, -10)
+scale = Vector2(4.999998, 4.999998)
+shape = SubResource("RectangleShape2D_jb7p7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(1, -1)

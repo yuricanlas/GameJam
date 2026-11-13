@@ -1,8 +1,8 @@
 [gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dh0faxx5np87y"]
 
 [sub_resource type="Gradient" id="1"]
-offsets = PackedFloat32Array(0.16304348, 0.9130435)
-colors = PackedColorArray(0.13984278, 0.14517236, 0.134462, 1, 0.947266, 0.57354, 0.928287, 1)
+offsets = PackedFloat32Array(0, 0.016304348)
+colors = PackedColorArray(0.947266, 0.57354, 0.928287, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="2"]
 gradient = SubResource("1")
@@ -16,10 +16,16 @@ point_count = 5
 curve = SubResource("3")
 
 [resource]
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
 direction = Vector3(0, 0, 0)
 spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
 orbit_velocity_curve = SubResource("4")
-gravity = Vector3(100, 0, 0)
-scale_min = 3.0
-scale_max = 3.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
+scale_min = 0.0
+scale_max = 0.099999994
 color_ramp = SubResource("2")
