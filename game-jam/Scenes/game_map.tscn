@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bm0jpvhyaca80" path="res://Scenes/trash_tile.tscn" id="2_c4nuu"]
 [ext_resource type="Script" uid="uid://cmdkwwx7m5kla" path="res://Scripts/trash_display.gd" id="4_d8w4w"]
 [ext_resource type="Script" uid="uid://dk2ddf5dsn0m1" path="res://Scenes/money_display.gd" id="5_3qyi3"]
+[ext_resource type="PackedScene" uid="uid://deydb4o744t64" path="res://Scenes/base.tscn" id="6_rlp0x"]
 
 [node name="GameMap" type="Node2D" unique_id=728196909]
 script = ExtResource("1_c4nuu")
@@ -20,20 +21,25 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=284482041]
 layer = 5
-scale = Vector2(5, 5)
-transform = Transform2D(5, 0, 0, 5, 0, 0)
 
 [node name="TrashDisplay" type="Label" parent="CanvasLayer" unique_id=939468237]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Placeholder"
+offset_left = -119.799995
+offset_top = -79.99999
+offset_right = 8.200005
+offset_bottom = -56.999992
+text = "Placeholder One"
 script = ExtResource("4_d8w4w")
 
 [node name="MoneyDisplay" type="Label" parent="CanvasLayer" unique_id=395630189]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Placeholder"
+offset_left = 7.5999994
+offset_top = -78.99999
+offset_right = 135.6
+offset_bottom = -55.999992
+text = "Placeholder Two"
 script = ExtResource("5_3qyi3")
+
+[node name="BaseWalls" parent="." unique_id=11968783 instance=ExtResource("6_rlp0x")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="trash_removed" from="." to="CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
