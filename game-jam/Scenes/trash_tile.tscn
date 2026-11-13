@@ -1763,5 +1763,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_58pb2")
 
 [node name="TrashTile" type="TileMapLayer" unique_id=566717525]
+texture_filter = 1
 tile_set = SubResource("TileSet_wl0ip")
 script = ExtResource("2_58pb2")

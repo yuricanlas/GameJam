@@ -1371,5 +1371,6 @@ custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_lreug")
 
 [node name="MapTileSet" type="TileMapLayer" unique_id=507486705]
+texture_filter = 1
 tile_set = SubResource("TileSet_x0upp")
 script = ExtResource("2_lreug")
