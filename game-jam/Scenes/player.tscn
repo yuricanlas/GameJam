@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bepa8fa8reuec" path="res://Scenes/weapon.tscn" id="1_rpqav"]
 [ext_resource type="Script" uid="uid://b8sva7ag8e2du" path="res://Scripts/vacuum.gd" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://d1hbxtfstlpcd" path="res://Assets/Down_walk1.png" id="4_5ixxa"]
+[ext_resource type="Material" uid="uid://dh0faxx5np87y" path="res://Assets/Tornado.tres" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dxdxwamoskuaq" path="res://Assets/Down_walk2.png" id="5_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpga1"]
@@ -35,6 +36,12 @@ shape = SubResource("RectangleShape2D_dpga1")
 [node name="Vacuum" type="Node2D" parent="." unique_id=876870418]
 script = ExtResource("3_gntrk")
 metadata/_custom_type_script = "uid://b8sva7ag8e2du"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Vacuum" unique_id=1440764778]
+scale = Vector2(10, 10)
+sub_emitter = NodePath(".")
+lifetime = 5.0
+process_material = ExtResource("4_x3wgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(1, -1)
