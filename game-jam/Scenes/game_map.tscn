@@ -44,10 +44,10 @@ script = ExtResource("4_d8w4w")
 
 [node name="MoneyDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=395630189]
 z_index = 1
-offset_left = 93.0
-offset_top = 71.00001
-offset_right = 221.0
-offset_bottom = 94.00001
+offset_left = -1.0
+offset_top = 74.0
+offset_right = 127.0
+offset_bottom = 100.00001
 text = "Placeholder Two"
 script = ExtResource("5_3qyi3")
 
