@@ -21,12 +21,12 @@ func is_tile_in_tileset(coords: Vector2i) -> bool:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("vaccum_left"):
 		self.visible = true
-		rotation_degrees = 270
+		rotation_degrees = 180
 		position.x = -abs(position.x)
 		
 	if Input.is_action_just_pressed("vaccum_right"):
 		self.visible = true
-		rotation_degrees = 90
+		rotation_degrees = 0
 		position.x = abs(position.x)
 	
 	if Input.is_action_just_released("vaccum_left"):
