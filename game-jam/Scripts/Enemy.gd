@@ -13,12 +13,14 @@ signal died
 @onready var body_shape: CollisionShape2D = $CollisionShape2D
 @onready var damage_area: Area2D = $DamageArea
 @onready var health_bar: ProgressBar = $HealthBar
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 var health := 100
 var move_direction := Vector2.ZERO
 var time_until_turn := 0.0
 var time_until_contact_hit := 0.0
-
+var is_attacking := false
 
 func _ready() -> void:
 	visible = true
@@ -32,7 +34,8 @@ func _ready() -> void:
 	# Prevent the enemy from riding other bodies like moving platforms
 	platform_floor_layers = 0
 	platform_wall_layers = 0
-	
+	if not sprite.animation_finished.is_connected(_on_sprite_animation_finished):
+		sprite.animation_finished.connect(_on_sprite_animation_finished)
 	
 
 
@@ -91,6 +94,14 @@ func _physics_process(delta: float) -> void:
 
 	# Keep checking for damage while the enemy is touching the player
 	_check_player_contact(delta)
+	
+	_update_animation()
+
+	# Move once per physics frame and choose a new turn after collisions.
+	if move_and_slide():
+		time_until_turn = 0.0
+
+	_check_player_contact(delta)
 
 
 func _check_player_contact(delta: float) -> void:
@@ -104,6 +115,7 @@ func _check_player_contact(delta: float) -> void:
 	# Each enemy has its own timer between contact hits
 	time_until_contact_hit = contact_hit_interval
 	if player.health > 0:
+		_play_hit_animation(player)
 		player.attacked(contact_damage)
 		print("Player took ", contact_damage, " contact damage")
 		print("Player health: ", player.health)
@@ -150,3 +162,44 @@ func _on_damage_area_body_shape_exited(
 	_local_shape_index: int
 ) -> void:
 	pass
+	
+	
+func _update_animation() -> void:
+	# Let the hit animation finish before playing walk or idle.
+	if is_attacking:
+		return
+	if velocity.length_squared() < 0.01:
+		sprite.play("idle_down")
+
+	# Use whichever direction has the strongest movement.
+	elif abs(velocity.x) > abs(velocity.y):
+		if velocity.x < 0:
+			sprite.play("left_walk")
+		else:
+			sprite.play("right_walk")
+	else:
+		if velocity.y < 0:
+			sprite.play("up_walk")
+		else:
+			sprite.play("bottom_walk")
+			
+			
+func _play_hit_animation(player: Player) -> void:
+	is_attacking = true
+
+	var player_shape := player.get_node_or_null("CollisionShape2D") as CollisionShape2D
+	var player_position := player.global_position
+
+	if player_shape != null:
+		player_position = player_shape.global_position
+
+	if player_position.x < body_shape.global_position.x:
+		sprite.play("hit_left")
+	else:
+		sprite.play("hit_right")
+
+
+func _on_sprite_animation_finished() -> void:
+	if sprite.animation in [&"hit_left", &"hit_right"]:
+		is_attacking = false
+		_update_animation()
