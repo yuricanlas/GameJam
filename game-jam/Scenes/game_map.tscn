@@ -32,11 +32,13 @@ position = Vector2(23, 151)
 layer = 5
 
 [node name="TrashDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=939468237]
-offset_left = -119.799995
-offset_top = -79.99999
-offset_right = 8.200005
-offset_bottom = -56.999992
+z_index = 2
+offset_left = -41.0
+offset_top = 50.000008
+offset_right = 87.0
+offset_bottom = 73.00001
 text = "Placeholder One"
+horizontal_alignment = 1
 script = ExtResource("4_d8w4w")
 
 [node name="MoneyDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=395630189]
@@ -57,3 +59,4 @@ disable_mode = 2
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="trash_erased" from="CharacterBody2D" to="." method="add_cleaned"]

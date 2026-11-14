@@ -35,17 +35,19 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_released("vaccum_right"):
 		self.visible = false
+		
+	if visible:
+		_suck()
+
+func _suck() -> void:
+	var center: Vector2i = trash_tiles.local_to_map(trash_tiles.to_local($Area2D.global_position))
+	for x in range(-strength, strength + 1):
+		for y in range(-strength, strength + 1):
+			var c := center + Vector2i(x, y)
+			if trash_tiles.get_cell_source_id(c) != -1:
+				trash_tiles.erase_cell(c)
+				trash_erased.emit()
 	
 
 func upgrade():
 	strength += 1
-
-func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body == trash_tiles:
-		print("AT trash tiles")
-		var coords: Vector2i = trash_tiles.get_coords_for_body_rid(body_rid)
-		trash_tiles.erase_cell.call_deferred(coords)
-		trash_erased.emit()
-		
-		emit_signal("trash_erased")
-	pass # Replace with function body.
