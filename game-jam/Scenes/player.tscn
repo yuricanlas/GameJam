@@ -72,9 +72,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb7p7"]
-size = Vector2(37, 47)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
 atlas = ExtResource("4_x3wgy")
 region = Rect2(0, 0, 32, 32)
