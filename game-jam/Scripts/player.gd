@@ -38,6 +38,7 @@ func attacked(damage: int) -> void:
 
 	
 	if health <= 0 and not dead:
+		health = 0
 		$NoHealthSound.play()
 		dead = true
 
