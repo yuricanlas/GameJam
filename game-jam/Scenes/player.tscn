@@ -268,7 +268,7 @@ position = Vector2(9, 6.75)
 shape = SubResource("RectangleShape2D_1alby")
 
 [node name="Vacuum" type="Node2D" parent="." unique_id=876870418]
-position = Vector2(45, 0)
+position = Vector2(40, 4)
 script = ExtResource("3_gntrk")
 metadata/_custom_type_script = "uid://b8sva7ag8e2du"
 
