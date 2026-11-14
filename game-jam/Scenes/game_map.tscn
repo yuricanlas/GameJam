@@ -25,25 +25,30 @@ one_shot = true
 [node name="BaseWalls" parent="." unique_id=11968783 instance=ExtResource("6_rlp0x")]
 scale = Vector2(0.75, 0.75)
 
+[node name="CharacterBody2D" parent="." unique_id=212031758 node_paths=PackedStringArray("trash_tile") instance=ExtResource("5_mue85")]
+trash_tile = NodePath("../TrashTile")
 [node name="CharacterBody2D" parent="." unique_id=212031758 instance=ExtResource("5_mue85")]
 position = Vector2(23, 151)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D" unique_id=284482041]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
+zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D/Camera2D" unique_id=284482041]
 layer = 5
 
-[node name="TrashDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=939468237]
-offset_left = -119.799995
-offset_top = -79.99999
-offset_right = 8.200005
-offset_bottom = -56.999992
+[node name="TrashDisplay" type="Label" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=939468237]
+offset_left = -120.0
+offset_top = -54.0
+offset_right = 8.0
+offset_bottom = -31.0
 text = "Placeholder One"
 script = ExtResource("4_d8w4w")
 
-[node name="MoneyDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=395630189]
-offset_left = 7.5999994
-offset_top = -78.99999
-offset_right = 135.6
-offset_bottom = -55.999992
+[node name="MoneyDisplay" type="Label" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=395630189]
+offset_left = 7.0
+offset_top = -52.0
+offset_right = 135.0
+offset_bottom = -29.0
 text = "Placeholder Two"
 script = ExtResource("5_3qyi3")
 
@@ -57,3 +62,4 @@ disable_mode = 2
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="trash_erased" from="CharacterBody2D" to="." method="add_cleaned"]
