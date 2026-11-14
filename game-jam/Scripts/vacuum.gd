@@ -2,7 +2,7 @@ class_name Vacuum
 extends Node2D
 
 @export var strength : int = 1
-@onready var trash_tiles = get_parent().trash_tile
+@onready var trash_tiles: TileMapLayer = $"../../TrashTile"
 
 signal trash_erased
 

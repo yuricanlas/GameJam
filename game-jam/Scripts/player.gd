@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var money = 0
 
 @export var trash_tile: TileMapLayer
+var facing := "up"
 
 signal trash_erased
 
@@ -34,6 +35,18 @@ func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_dir * speed
 	move_and_slide()
+
+	if input_dir == Vector2.ZERO:
+		$AnimatedSprite2D.play("idle_" + facing)
+		return
+
+	# Use the stronger direction when moving diagonally.
+	if absf(input_dir.x) > absf(input_dir.y):
+		facing = "right" if input_dir.x > 0 else "left"
+	else:
+		facing = "down" if input_dir.y > 0 else "up"
+
+	$AnimatedSprite2D.play("move_" + facing)
 
 func _on_vacuum_trash_erased() -> void:
 	emit_signal("trash_erased")
