@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://d4ibf3vqwjics"]
 
 [ext_resource type="Script" uid="uid://bpnx6au1swaiu" path="res://button.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://1gq2lumde1ic" path="res://main_menu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bhscpt7uqv57b" path="res://Assets/MainMenu/startscreen.png" id="2_fu7sn"]
+[ext_resource type="AudioStream" uid="uid://djgcbp6rmbkbe" path="res://Assets/SFX/motion-danijel-zambo-main-version-02-13-1409.mp3" id="4_glbon"]
 
 [node name="MainMenu" type="Control" unique_id=240950138]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jix8l")
 
 [node name="Button" type="Button" parent="." unique_id=1377294549]
 layout_mode = 0
@@ -23,3 +26,8 @@ script = ExtResource("1_7vrkn")
 position = Vector2(574.5, 325.5)
 scale = Vector2(7.16875, 6.47)
 texture = ExtResource("2_fu7sn")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=691914172]
+stream = ExtResource("4_glbon")
+
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
