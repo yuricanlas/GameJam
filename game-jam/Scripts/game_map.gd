@@ -73,3 +73,5 @@ func _on_mob_died() -> void:
 	money += 25
 	emit_signal("enemy_killed")
 	pass # Replace with function body.
+func _on_music_finished() -> void:
+	$Music.play()

@@ -23,21 +23,26 @@ func _process(delta: float) -> void:
 		self.visible = true
 		rotation_degrees = 270
 		position.x = -abs(position.x)
+		$VacuumSound.play()
 		
 	if Input.is_action_just_pressed("vaccum_right"):
 		self.visible = true
 		rotation_degrees = 90
 		position.x = abs(position.x)
+		$VacuumSound.play()
 	
 	if Input.is_action_just_released("vaccum_left"):
 		self.visible = false
+		$VacuumSound.stop()
 		
 	
 	if Input.is_action_just_released("vaccum_right"):
 		self.visible = false
+		$VacuumSound.stop()
 		
 	if visible:
 		_suck()
+	
 
 func _suck() -> void:
 	var center: Vector2i = trash_tiles.local_to_map(trash_tiles.to_local($Area2D.global_position))
@@ -51,3 +56,7 @@ func _suck() -> void:
 
 func upgrade():
 	strength += 1
+
+
+func _on_vacuum_sound_finished() -> void:
+	$VacuumSound.play()

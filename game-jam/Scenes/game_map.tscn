@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://di6cqthklsgc4" path="res://Assets/UI/Elements-01.png" id="8_v8ky0"]
 [ext_resource type="PackedScene" uid="uid://dm8kpl2q3c7nw" path="res://Scenes/mob.tscn" id="8_vs6hg"]
 [ext_resource type="Script" uid="uid://bryo52l3sveuw" path="res://Scenes/speed_display.gd" id="9_qy8qd"]
+[ext_resource type="AudioStream" uid="uid://gtta6bn23ve5" path="res://Assets/SFX/sounds-from-space-soundroll-main-version-1884-01-28.mp3" id="12_e8upy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8nqw"]
 size = Vector2(32.75, 59)
@@ -197,6 +198,10 @@ tile_set = SubResource("TileSet_y6rfa")
 navigation_polygon = SubResource("NavigationPolygon_bcdk8")
 
 [connection signal="enemy_killed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_enemy_killed"]
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1890423221]
+stream = ExtResource("12_e8upy")
+autoplay = true
+
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
@@ -204,3 +209,4 @@ navigation_polygon = SubResource("NavigationPolygon_bcdk8")
 [connection signal="died" from="mob2" to="." method="_on_mob_died"]
 [connection signal="died" from="mob3" to="." method="_on_mob_died"]
 [connection signal="trash_erased" from="CharacterBody2D" to="." method="add_cleaned"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
