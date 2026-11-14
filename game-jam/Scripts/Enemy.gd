@@ -28,6 +28,8 @@ func _ready() -> void:
 	# Prevent the enemy from riding other bodies like moving platforms
 	platform_floor_layers = 0
 	platform_wall_layers = 0
+	
+	
 
 
 func take_damage(amount: int) -> void:

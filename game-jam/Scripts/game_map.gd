@@ -12,6 +12,7 @@ extends Node2D
 var level = TrashStats.level
 
 signal trash_removed
+signal enemy_killed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,4 +66,10 @@ func _on_enemy_died(enemy: Enemy) -> void:
 	
 func _on_spawn_timer_timeout() -> void:
 	# Spawn the mobs
+	pass # Replace with function body.
+
+
+func _on_mob_died() -> void:
+	money += 25
+	emit_signal("enemy_killed")
 	pass # Replace with function body.

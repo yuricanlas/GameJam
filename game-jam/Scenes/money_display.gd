@@ -17,3 +17,9 @@ func _on_game_map_trash_removed() -> void:
 	money += 10
 	text = "Money: $" + str(money)
 	pass # Replace with function body.
+
+
+func _on_game_map_enemy_killed() -> void:
+	money += 25
+	text = "Money: $" + str(money)
+	pass # Replace with function body.

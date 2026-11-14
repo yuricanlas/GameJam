@@ -196,7 +196,9 @@ position = Vector2(407, -307)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1228870085]
 navigation_polygon = SubResource("NavigationPolygon_bcdk8")
 
+[connection signal="enemy_killed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_enemy_killed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="trash_erased" from="CharacterBody2D" to="." method="add_cleaned"]
+[connection signal="died" from="mob" to="." method="_on_mob_died"]
