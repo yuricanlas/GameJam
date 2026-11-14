@@ -40,16 +40,12 @@ func _process(delta: float) -> void:
 func upgrade():
 	strength += 1
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("Thing Detected")
-	print(body)
-	if body is TileMapLayer:
-		var coords = body.local_to_map(
-			body.to_local(global_position)
-		)
-		print("Tile coordinates: ", coords)
-		body.erase_cell(coords)
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body == trash_tiles:
+		print("AT trash tiles")
+		var coords: Vector2i = trash_tiles.get_coords_for_body_rid(body_rid)
+		trash_tiles.erase_cell.call_deferred(coords)
+		trash_erased.emit()
 		
 		emit_signal("trash_erased")
-	
+	pass # Replace with function body.
