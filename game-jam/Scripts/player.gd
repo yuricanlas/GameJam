@@ -4,8 +4,8 @@ extends CharacterBody2D
 signal trash_erased
 
 @export var playerName: String
-@export var health: int
 @export var max_health: int = 100
+@export var health: int = max_health
 @export var speed: float = 200.0
 @export var trash_tile: TileMapLayer
 
@@ -28,6 +28,8 @@ func _ready() -> void:
 
 func attacked(damage: int) -> void:
 	health -= damage
+	# if health <= 0: gameOver
+	
 
 
 func heal(patch: int) -> void:
