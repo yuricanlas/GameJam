@@ -281,6 +281,7 @@ sprite_frames = SubResource("SpriteFrames_jb7p7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vacuum/Area2D" unique_id=1721175155]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_jb7p7")
+debug_color = Color(0.6526195, 0.32715735, 1, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(9.000004, 7)
