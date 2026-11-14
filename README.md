@@ -28,4 +28,6 @@ https://grimygraphix.itch.io/trashville
 
 Moonbase: Used for the moon map
 https://jitsukoan.itch.io/moonbase
-- 
+
+Tornado: Used for the vaccum
+https://creasta.itch.io/tornado-pixel-sprite-sheet

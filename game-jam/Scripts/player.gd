@@ -5,18 +5,19 @@ extends CharacterBody2D
 @export var health : int
 @export var max_health: int = 100
 @export var speed: float = 200.0
+@onready var money = 0
 
-var last_direction: Vector2 = Vector2.RIGHT
+@export var trash_tile: TileMapLayer
+var facing := "up"
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
+signal trash_erased
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
 
 func attacked(damage: int):
@@ -31,37 +32,21 @@ func heal(patch: int):
 		health += patch
 
 func _physics_process(delta: float) -> void:
-	
-	process_movement()
-	process_animation()
+	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_dir * speed
 	move_and_slide()
 
+	if input_dir == Vector2.ZERO:
+		$AnimatedSprite2D.play("idle_" + facing)
+		return
 
-# --------------------------------------------------
-# MOVEMENT AND ANIMATION
-# --------------------------------------------------
-func process_movement() -> void:
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
-	if direction != Vector2.ZERO:
-		velocity = direction * speed
-		last_direction = direction
+	# Use the stronger direction when moving diagonally.
+	if absf(input_dir.x) > absf(input_dir.y):
+		facing = "right" if input_dir.x > 0 else "left"
 	else:
-		velocity = Vector2.ZERO
-	
-	
-func process_animation() -> void:
-	if velocity != Vector2.ZERO:
-		play_animation("move", last_direction) # player is running
-	else:
-		play_animation("idle", last_direction)
-	
-func play_animation(prefix: String, dir: Vector2) -> void:
-	if dir.x > 0: # player is moving right
-		animated_sprite_2d.play(prefix + "_right")
-	elif dir.x < 0: # player is moving left
-		animated_sprite_2d.play(prefix + "_left")
-	elif dir.y > 0: # player is moving down
-		animated_sprite_2d.play(prefix + "_down")
-	elif dir.y < 0: # player is moving up
-		animated_sprite_2d.play(prefix + "_up")
+		facing = "down" if input_dir.y > 0 else "up"
+
+	$AnimatedSprite2D.play("move_" + facing)
+
+func _on_vacuum_trash_erased() -> void:
+	emit_signal("trash_erased")
