@@ -24,10 +24,10 @@ func take_damage(amount: int) -> void:
 		queue_free() # Remove this enemy from the scene at the end of the frame
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.attacked(contact_damage)
-		print("Player health: ", body.health)
-		print("Player took ", contact_damage, " contact damage")
+	#if body is Player:
+	body.attacked(contact_damage)
+	print("Player health: ", body.health)
+	print("Player took ", contact_damage, " contact damage")
 
 func _physics_process(delta: float) -> void:
 	time_until_turn -= delta
