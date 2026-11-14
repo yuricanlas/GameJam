@@ -54,7 +54,8 @@ func _on_enemy_died(enemy: Enemy) -> void:
 		var marker: Marker2D = respawn_points.pick_random()
 		spawn_position = marker.global_position
 
-	var new_enemy := enemy_scene.instantiate() as Enemy
+	var new_enemy := preload("res://Scenes/mob.tscn").instantiate() as Enemy
+	
 	new_enemy.move_speed = next_move_speed
 	new_enemy.contact_damage = next_contact_damage
 	new_enemy.position = to_local(spawn_position)

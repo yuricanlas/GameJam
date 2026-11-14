@@ -12,6 +12,7 @@ signal died
 
 @onready var body_shape: CollisionShape2D = $CollisionShape2D
 @onready var damage_area: Area2D = $DamageArea
+@onready var health_bar: ProgressBar = $HealthBar
 
 var health := 100
 var move_direction := Vector2.ZERO
@@ -21,7 +22,10 @@ var time_until_contact_hit := 0.0
 
 func _ready() -> void:
 	visible = true
-
+	# Start with a full health bar
+	health_bar.max_value = health
+	health_bar.value = health
+	
 	# Use top down movement
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 
@@ -37,6 +41,7 @@ func take_damage(amount: int) -> void:
 		return  # Prevent multiple death signals
 
 	health = maxi(0, health - amount)
+	health_bar.value = health  # Update the health bar
 	health_changed.emit(health)
 
 	if health == 0:

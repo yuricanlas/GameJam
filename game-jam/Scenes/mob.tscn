@@ -45,13 +45,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpsb2"]
 size = Vector2(30.555555, 54.629627)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8nqw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b44se"]
+bg_color = Color(0.9411765, 0.32156864, 0.38039216, 1)
+
 [node name="mob" type="CharacterBody2D" unique_id=1916443741]
 script = ExtResource("2_u8nqw")
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=296297555]
 position = Vector2(-33, -3)
-collision_layer = 255
-collision_mask = 255
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1888153196]
 position = Vector2(-27.625, -3.5)
@@ -71,6 +75,16 @@ shape = SubResource("RectangleShape2D_lpsb2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1049028479]
 navigation_layers = 65535
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=2013534784]
+custom_minimum_size = Vector2(5, 5)
+offset_left = -75.0
+offset_top = -42.0
+offset_right = -45.0
+offset_bottom = -37.0
+theme_override_styles/background = SubResource("StyleBoxFlat_u8nqw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b44se")
+show_percentage = false
 
 [connection signal="body_exited" from="DamageArea" to="." method="_on_damage_area_body_exited"]
 [connection signal="body_shape_entered" from="DamageArea" to="." method="_on_damage_area_body_shape_entered"]

@@ -15,7 +15,7 @@ func _ready() -> void:
 func is_tile_in_tileset(coords: Vector2i) -> bool:
 	var source_id = trash_tiles.get_cell_source_id(coords)
 
-	return source_id != -1 and trash_tiles.has_source(source_id)
+	return source_id != -1 and trash_tiles.tie_set.has_source(source_id)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
