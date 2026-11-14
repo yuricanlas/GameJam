@@ -116,6 +116,30 @@ one_shot = true
 [node name="BaseWalls" parent="." unique_id=11968783 instance=ExtResource("6_rlp0x")]
 scale = Vector2(0.75, 0.75)
 
+[node name="mob" parent="." unique_id=1916443741 instance=ExtResource("8_vs6hg")]
+position = Vector2(-128, 96)
+disable_mode = 2
+
+[node name="mob2" parent="." unique_id=844163081 instance=ExtResource("8_vs6hg")]
+position = Vector2(-128, 96)
+disable_mode = 2
+
+[node name="mob3" parent="." unique_id=2054138131 instance=ExtResource("8_vs6hg")]
+position = Vector2(-128, 96)
+disable_mode = 2
+
+[node name="spawn4" type="Marker2D" parent="." unique_id=485265598]
+position = Vector2(-301, 302)
+
+[node name="spawn3" type="Marker2D" parent="spawn4" unique_id=1291322609]
+position = Vector2(105, -563)
+
+[node name="spawn2" type="Marker2D" parent="spawn4" unique_id=1349293351]
+position = Vector2(434, 55)
+
+[node name="spawn1" type="Marker2D" parent="spawn4/spawn2" unique_id=418142970]
+position = Vector2(407, -307)
+
 [node name="CharacterBody2D" parent="." unique_id=212031758 instance=ExtResource("5_mue85")]
 position = Vector2(23, 151)
 
@@ -169,30 +193,6 @@ tile_set = SubResource("TileSet_y6rfa")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
 
-[node name="mob" parent="." unique_id=1916443741 instance=ExtResource("8_vs6hg")]
-position = Vector2(-128, 96)
-disable_mode = 2
-
-[node name="mob2" parent="." unique_id=844163081 instance=ExtResource("8_vs6hg")]
-position = Vector2(-128, 96)
-disable_mode = 2
-
-[node name="mob3" parent="." unique_id=2054138131 instance=ExtResource("8_vs6hg")]
-position = Vector2(-128, 96)
-disable_mode = 2
-
-[node name="spawn4" type="Marker2D" parent="." unique_id=485265598]
-position = Vector2(-301, 302)
-
-[node name="spawn3" type="Marker2D" parent="spawn4" unique_id=1291322609]
-position = Vector2(105, -563)
-
-[node name="spawn2" type="Marker2D" parent="spawn4" unique_id=1349293351]
-position = Vector2(434, 55)
-
-[node name="spawn1" type="Marker2D" parent="spawn4/spawn2" unique_id=418142970]
-position = Vector2(407, -307)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1228870085]
 navigation_polygon = SubResource("NavigationPolygon_bcdk8")
 
@@ -200,5 +200,7 @@ navigation_polygon = SubResource("NavigationPolygon_bcdk8")
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/MoneyDisplay" method="_on_game_map_trash_removed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="trash_erased" from="CharacterBody2D" to="." method="add_cleaned"]
 [connection signal="died" from="mob" to="." method="_on_mob_died"]
+[connection signal="died" from="mob2" to="." method="_on_mob_died"]
+[connection signal="died" from="mob3" to="." method="_on_mob_died"]
+[connection signal="trash_erased" from="CharacterBody2D" to="." method="add_cleaned"]
