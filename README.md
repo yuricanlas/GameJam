@@ -57,3 +57,9 @@ Yuri Canlas
 [Tornado](https://creasta.itch.io/tornado-pixel-sprite-sheet) - Used for the vacuum
 
 [Trashville](https://grimygraphix.itch.io/trashville) - Used for the trash
+Tornado: Used for the vaccum
+https://creasta.itch.io/tornado-pixel-sprite-sheet
+
+Sound effects were found at https://pixabay.com.
+
+Music: 'Sounds From Space' by Soundroll on #Uppbeat https://uppbeat.io/c/soundroll

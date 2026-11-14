@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b664ng3pvp2g5" path="res://Assets/mytronado.png" id="4_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://cflml0wicge4u" path="res://Assets/Player/down_idle.png" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://b8shojpgd0lbr" path="res://Assets/Player/down_walk1.png" id="5_3smsa"]
-[ext_resource type="Texture2D" uid="uid://71r2ho3kp38l" path="res://Assets/Player/left_attack.png" id="5_igrcy"]
+[ext_resource type="AudioStream" uid="uid://cpjnpqr8jm30" path="res://Assets/SFX/u_xg7ssi08yr-vacuum-2-421350.mp3" id="5_igrcy"]
 [ext_resource type="Texture2D" uid="uid://dc0v1fsbej80n" path="res://Assets/Player/down_walk2.png" id="6_8erm5"]
 [ext_resource type="Texture2D" uid="uid://d1obmifx08duh" path="res://Assets/Player/right_attack.png" id="6_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://71r2ho3kp38l" path="res://Assets/Player/left_attack.png" id="6_olqyp"]
 [ext_resource type="Texture2D" uid="uid://civg6byhkjame" path="res://Assets/Player/up_idle.png" id="7_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://dacc2mt5qbs5n" path="res://Assets/Player/left_walk1.png" id="7_h4iuc"]
 [ext_resource type="Texture2D" uid="uid://npqvleabff8i" path="res://Assets/Player/left_idle.png" id="8_fd4e3"]
@@ -18,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://w4o67fqknqrd" path="res://Assets/Player/right_walk1.png" id="10_igrcy"]
 [ext_resource type="Texture2D" uid="uid://cut1kbsdd6nc0" path="res://Assets/Player/right_idle.png" id="11_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://c58xxrpdnx0h3" path="res://Assets/Player/right_walk2.png" id="12_l6n3p"]
+[ext_resource type="AudioStream" uid="uid://cjehv7ah7777k" path="res://Assets/SFX/freesound_community-pasos-steps-40285.mp3" id="18_igrcy"]
+[ext_resource type="AudioStream" uid="uid://dncdecou085w2" path="res://Assets/SFX/freesound_community-microwave-finished-82491.mp3" id="19_fs7ks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpga1"]
 size = Vector2(44, 48.5)
@@ -75,12 +78,12 @@ animations = [{
 size = Vector2(37, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yh6i2"]
-atlas = ExtResource("5_igrcy")
-region = Rect2(46, 32, 33, 31)
+atlas = ExtResource("6_olqyp")
+region = Rect2(40, 32, 40, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_11gg7"]
-atlas = ExtResource("5_igrcy")
-region = Rect2(13, 1, 33, 31)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv4vc"]
+atlas = ExtResource("6_olqyp")
+region = Rect2(0, 0, 40, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpa8y"]
 atlas = ExtResource("6_fs7ks")
@@ -177,7 +180,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yh6i2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_11gg7")
+"texture": SubResource("AtlasTexture_nv4vc")
 }],
 "loop": 0,
 "name": &"attack_left",
@@ -333,11 +336,24 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_jb7p7")
 debug_color = Color(0.6526195, 0.32715735, 1, 0.41960785)
 
+[node name="VacuumSound" type="AudioStreamPlayer2D" parent="Vacuum" unique_id=2020230890]
+stream = ExtResource("5_igrcy")
+volume_db = -10.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(-0.101561844, 7.656249)
 scale = Vector2(1.4000947, 1.5262097)
 sprite_frames = SubResource("SpriteFrames_dpga1")
-animation = &"move_up"
+animation = &"attack_left"
+
+[node name="StepSounds" type="AudioStreamPlayer2D" parent="." unique_id=1048495525]
+stream = ExtResource("18_igrcy")
+volume_db = 10.0
+
+[node name="NoHealthSound" type="AudioStreamPlayer2D" parent="." unique_id=1924126075]
+stream = ExtResource("19_fs7ks")
 
 [connection signal="trash_erased" from="Vacuum" to="." method="_on_vacuum_trash_erased"]
 [connection signal="body_shape_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_shape_entered"]
+[connection signal="finished" from="Vacuum/VacuumSound" to="Vacuum" method="_on_vacuum_sound_finished"]
+[connection signal="finished" from="StepSounds" to="." method="_on_step_sounds_finished"]
