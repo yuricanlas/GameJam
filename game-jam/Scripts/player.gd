@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var last_direction: Vector2 = Vector2.RIGHT # vector starts off facing right
+var is_attacking: bool = false
 
 @export var trash_tile: TileMapLayer
 var facing := "up"
@@ -35,6 +36,18 @@ func heal(patch: int):
 		health += patch
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("attack_left") and not is_attacking:
+		animated_sprite_2d.play("attack_left")
+		attack()
+	elif Input.is_action_just_pressed("attack_right") and not is_attacking:
+		animated_sprite_2d.play("attack_right")
+		attack()
+		
+	if is_attacking:
+		velocity = Vector2.ZERO
+		return
+	
 	process_movement()
 	process_animation()
 	move_and_slide()
@@ -51,11 +64,12 @@ func process_movement() -> void:
 		last_direction = direction
 	else:
 		velocity = Vector2.ZERO
-		
 	
 
 # determines what animation type i should be using
 func process_animation() -> void:
+	if is_attacking:
+		return
 	if velocity != Vector2.ZERO: # if player is not stationary
 		play_animation("move", last_direction)
 	else: # character is not moving
@@ -74,3 +88,17 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 
 func _on_vacuum_trash_erased() -> void:
 	emit_signal("trash_erased")
+
+# ------------------------------------
+# ATTACKING
+# ------------------------------------
+
+func attack() -> void:
+	is_attacking = true;
+	print("attack")
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if is_attacking:
+		is_attacking = false
+	pass # Replace with function body.
