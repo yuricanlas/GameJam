@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://beabnagy5tkgv" path="res://Scripts/Enemy.gd" id="2_u8nqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8nqw"]
+size = Vector2(31.5, 57.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8nqw"]
 atlas = ExtResource("1_h5js2")
@@ -42,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpsb2"]
-size = Vector2(31.25, 61)
+size = Vector2(32.625, 55.5)
 
 [node name="mob" type="CharacterBody2D" unique_id=1916443741]
 script = ExtResource("2_u8nqw")
@@ -51,16 +52,20 @@ script = ExtResource("2_u8nqw")
 position = Vector2(-15, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1888153196]
-position = Vector2(-1, -1)
+position = Vector2(-45.75, -5.625)
 shape = SubResource("RectangleShape2D_u8nqw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1149847262]
-position = Vector2(-16.5, -2.750002)
+position = Vector2(-61.000004, -8)
 scale = Vector2(0.546875, 0.48046872)
 sprite_frames = SubResource("SpriteFrames_lpsb2")
 animation = &"idle_down"
 frame_progress = 0.93684053
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580376460]
-position = Vector2(-16, -3)
+position = Vector2(-61.3125, -6.25)
 shape = SubResource("RectangleShape2D_lpsb2")
+
+[connection signal="body_exited" from="DamageArea" to="." method="_on_damage_area_body_exited"]
+[connection signal="body_shape_entered" from="DamageArea" to="." method="_on_damage_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="DamageArea" to="." method="_on_damage_area_body_shape_exited"]

@@ -10,6 +10,11 @@ var health := 100  # The enemy's starting health
 var move_direction := Vector2.ZERO
 var time_until_turn := 0.0
 
+
+func _ready() -> void:
+	visible = true
+	pass # Replace with function body.
+	
 func take_damage(amount: int) -> void:
 	if health <= 0:
 		return # Prevent two hits from triggering two respawns.
@@ -22,12 +27,6 @@ func take_damage(amount: int) -> void:
 	if health == 0:
 		died.emit() # Tell GameMap the enemy died so it can schedule a respawn
 		queue_free() # Remove this enemy from the scene at the end of the frame
-
-func _on_damage_area_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.attacked(contact_damage)
-		print("Player health: ", body.health)
-		print("Player took ", contact_damage, " contact damage")
 
 func _physics_process(delta: float) -> void:
 	time_until_turn -= delta
@@ -42,3 +41,18 @@ func _physics_process(delta: float) -> void:
 	# move_and_slide() returns true when the enemy hits something
 	if move_and_slide():
 		time_until_turn = 0.0
+
+
+func _on_damage_area_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_damage_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body is Player:
+		body.attacked(contact_damage)
+		print("Player health: ", body.health)
+		print("Player took ", contact_damage, " contact damage")
+
+
+func _on_damage_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.
