@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+signal trash_erased
+
 @export var playerName: String
 @export var health: int
 @export var max_health: int = 100
@@ -12,7 +14,16 @@ extends CharacterBody2D
 
 var facing := "up"
 
-signal trash_erased
+
+func _ready() -> void:
+	# Use right-click if the project is missing an attack binding.
+	if not InputMap.has_action("attack"):
+		InputMap.add_action("attack")
+
+	if InputMap.action_get_events("attack").is_empty():
+		var right_click := InputEventMouseButton.new()
+		right_click.button_index = MOUSE_BUTTON_RIGHT
+		InputMap.action_add_event("attack", right_click)
 
 
 func attacked(damage: int) -> void:
@@ -42,7 +53,8 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
 		# Swing right when facing up or down.
 		facing = "left" if facing == "left" else "right"
-		sprite.play("attack_" + facing)
+		var attack_animation := &"attack_left" if facing == "left" else &"attack_right"
+		sprite.play(attack_animation)
 		$Weapon.attack(facing)
 		return
 
