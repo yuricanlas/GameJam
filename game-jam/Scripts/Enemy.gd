@@ -96,10 +96,14 @@ func _check_player_contact(delta: float) -> void:
 
 	# Each enemy has its own timer between contact hits
 	time_until_contact_hit = contact_hit_interval
-	player.attacked(contact_damage)
-
-	print("Player took ", contact_damage, " contact damage")
-	print("Player health: ", player.health)
+	if player.health > 0:
+		player.attacked(contact_damage)
+		print("Player took ", contact_damage, " contact damage")
+		print("Player health: ", player.health)
+	
+	if player.health <= 0:
+		print("Player took ", contact_damage, " contact damage")
+		print("Player Died")
 
 
 func _get_contact_player() -> Player:
