@@ -13,14 +13,16 @@ signal trash_erased
 var last_direction: Vector2 = Vector2.RIGHT
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var facing := "up"
 
+signal trash_erased
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
 
 func attacked(damage: int):
@@ -35,39 +37,21 @@ func heal(patch: int):
 		health += patch
 
 func _physics_process(delta: float) -> void:
-	
-	process_movement()
-	process_animation()
+	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_dir * speed
 	move_and_slide()
+
+	if input_dir == Vector2.ZERO:
+		$AnimatedSprite2D.play("idle_" + facing)
+		return
+
+	# Use the stronger direction when moving diagonally.
+	if absf(input_dir.x) > absf(input_dir.y):
+		facing = "right" if input_dir.x > 0 else "left"
+	else:
+		facing = "down" if input_dir.y > 0 else "up"
+
+	$AnimatedSprite2D.play("move_" + facing)
 
 func _on_vacuum_trash_erased() -> void:
 	emit_signal("trash_erased")
-
-# --------------------------------------------------
-# MOVEMENT AND ANIMATION
-# --------------------------------------------------
-func process_movement() -> void:
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
-	if direction != Vector2.ZERO:
-		velocity = direction * speed
-		last_direction = direction
-	else:
-		velocity = Vector2.ZERO
-	
-	
-func process_animation() -> void:
-	if velocity != Vector2.ZERO:
-		play_animation("move", last_direction) # player is running
-	else:
-		play_animation("idle", last_direction)
-	
-func play_animation(prefix: String, dir: Vector2) -> void:
-	if dir.x > 0: # player is moving right
-		animated_sprite_2d.play(prefix + "_right")
-	elif dir.x < 0: # player is moving left
-		animated_sprite_2d.play(prefix + "_left")
-	elif dir.y > 0: # player is moving down
-		animated_sprite_2d.play(prefix + "_down")
-	elif dir.y < 0: # player is moving up
-		animated_sprite_2d.play(prefix + "_up")
