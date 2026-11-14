@@ -2227,6 +2227,8 @@ tile_map_data = PackedByteArray("AAACAAMAAAAEADgAAAACAAQAAAAEADkAAAACAAUAAAAEADo
 tile_set = SubResource("TileSet_5brml")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=143059308]
+collision_layer = 4
+collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_5brml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1862207252]
@@ -2235,12 +2237,16 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_nwdj6")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2065773299]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=325487141]
 position = Vector2(349, -313.5)
 shape = SubResource("RectangleShape2D_5brml")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=88274172]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1146746869]
 position = Vector2(603, -94.5)
@@ -2248,6 +2254,8 @@ shape = SubResource("RectangleShape2D_r88np")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=985852449]
 position = Vector2(603, -73.5)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=837515924]
 position = Vector2(-136, 178.25)
@@ -2255,6 +2263,8 @@ shape = SubResource("RectangleShape2D_ttfji")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1010164090]
 position = Vector2(466, 105.5)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1352588350]
 position = Vector2(-286, 0.5)
@@ -2262,12 +2272,16 @@ shape = SubResource("RectangleShape2D_pbr7r")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=659605465]
 position = Vector2(603, -72.5)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=579052965]
 position = Vector2(-350.5, 272.625)
 shape = SubResource("RectangleShape2D_5rbd5")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=186316795]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1635168335]
 position = Vector2(385.5, 199.5)

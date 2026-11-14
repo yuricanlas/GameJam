@@ -103,7 +103,7 @@ tile_set = SubResource("TileSet_y6rfa")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
 
 [node name="mob" parent="." unique_id=1916443741 instance=ExtResource("8_vs6hg")]
-position = Vector2(-128, 96)
+position = Vector2(-302, -140)
 disable_mode = 2
 
 [connection signal="trash_removed" from="." to="CharacterBody2D/CanvasLayer/TrashDisplay" method="_on_game_map_trash_removed"]

@@ -3241,8 +3241,8 @@ texture = ExtResource("1_f1fbe")
 54:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_wl0ip"]
-physics_layer_0/collision_layer = 5
-physics_layer_0/collision_mask = 5
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_58pb2")
 
 [node name="TrashTile" type="TileMapLayer" unique_id=566717525]
