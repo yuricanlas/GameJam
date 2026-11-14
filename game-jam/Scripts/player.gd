@@ -13,7 +13,7 @@ signal trash_erased
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var facing := "up"
-
+var dead = false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -32,15 +32,15 @@ func _ready() -> void:
 
 func attacked(damage: int) -> void:
 	health -= damage
-<<<<<<< HEAD
+
 	# if health <= 0: gameOver
 	
-=======
+
 	
 	if health <= 0 and not dead:
 		$NoHealthSound.play()
 		dead = true
->>>>>>> origin/HUD-branch-sfx
+
 
 
 func heal(patch: int) -> void:
@@ -53,15 +53,16 @@ func _physics_process(_delta: float) -> void:
 	velocity = input_dir * speed
 	move_and_slide()
 
-<<<<<<< HEAD
+
 	# Let the swing finish before playing idle or walk.
 	if sprite.is_playing() and sprite.animation in [&"attack_left", &"attack_right"]:
-=======
+		return
+
 	if input_dir == Vector2.ZERO:
 		$AnimatedSprite2D.play("idle_" + facing)
 		if $StepSounds.playing:
 			$StepSounds.stop()
->>>>>>> origin/HUD-branch-sfx
+
 		return
 		
 	if not $StepSounds.playing:
@@ -88,17 +89,11 @@ func _physics_process(_delta: float) -> void:
 	else:
 		sprite.play("move_" + facing)
 
-<<<<<<< HEAD
-
 func _on_vacuum_trash_erased() -> void:
 	trash_erased.emit()
-=======
 	$AnimatedSprite2D.play("move_" + facing)
 	
 
-func _on_vacuum_trash_erased() -> void:
-	emit_signal("trash_erased")
 
 func _on_step_sounds_finished() -> void:
 	$StepSounds.play()
->>>>>>> origin/HUD-branch-sfx
