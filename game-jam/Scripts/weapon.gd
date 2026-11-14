@@ -2,7 +2,7 @@ class_name Weapon
 extends Node
 
 @onready var hitbox: Area2D = $Hitbox
-@export var damage : int = 1
+@export var damage : int = 20
 @onready var hitbox_right: Area2D = $Hitbox
 @onready var hitbox_left: Area2D = $LeftHitBox
 

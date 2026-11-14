@@ -16,7 +16,8 @@ var facing := "up"
 
 
 func _ready() -> void:
-	# Use right-click if the project is missing an attack binding.
+	add_to_group("player")
+	# Use right-click if the project is missing an attack binding
 	if not InputMap.has_action("attack"):
 		InputMap.add_action("attack")
 
@@ -24,7 +25,10 @@ func _ready() -> void:
 		var right_click := InputEventMouseButton.new()
 		right_click.button_index = MOUSE_BUTTON_RIGHT
 		InputMap.action_add_event("attack", right_click)
-
+		
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	platform_floor_layers = 0
+	platform_wall_layers = 0
 
 func attacked(damage: int) -> void:
 	health -= damage
@@ -37,6 +41,7 @@ func heal(patch: int) -> void:
 
 
 func _physics_process(_delta: float) -> void:
+
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_dir * speed
 	move_and_slide()

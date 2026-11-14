@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c58xxrpdnx0h3" path="res://Assets/Player/right_walk2.png" id="12_l6n3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpga1"]
-size = Vector2(36, 45)
+size = Vector2(44, 48.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1alby"]
 size = Vector2(36, 44.5)
@@ -296,11 +296,11 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=212031758]
+collision_layer = 255
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147911024]
-visible = false
-position = Vector2(9, 6.5)
+position = Vector2(-1, 8.25)
 shape = SubResource("RectangleShape2D_dpga1")
 
 [node name="Weapon" parent="." unique_id=758386525 instance=ExtResource("1_rpqav")]
@@ -334,10 +334,10 @@ shape = SubResource("RectangleShape2D_jb7p7")
 debug_color = Color(0.6526195, 0.32715735, 1, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
-position = Vector2(0, 10)
-scale = Vector2(1.40625, 1.375)
+position = Vector2(-0.101561844, 7.656249)
+scale = Vector2(1.4000947, 1.5262097)
 sprite_frames = SubResource("SpriteFrames_dpga1")
-animation = &"attack_left"
+animation = &"move_up"
 
 [connection signal="trash_erased" from="Vacuum" to="." method="_on_vacuum_trash_erased"]
 [connection signal="body_shape_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_shape_entered"]
