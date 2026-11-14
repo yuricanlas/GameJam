@@ -41,7 +41,7 @@ func attacked(damage: int) -> void:
 		health = 0
 		$NoHealthSound.play()
 		dead = true
-
+		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 
 func heal(patch: int) -> void:

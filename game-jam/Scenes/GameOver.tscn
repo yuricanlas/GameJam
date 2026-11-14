@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://e0yfgpqhhf3r"]
+
+[ext_resource type="Script" uid="uid://c3xabhacfebnk" path="res://Scenes/game_over.gd" id="1_k52d1"]
+[ext_resource type="Texture2D" uid="uid://dd00nlwbk2pqp" path="res://Assets/Screens/game over with text.png" id="2_ktc4i"]
+
+[node name="GameOver" type="Control" unique_id=2041910523]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k52d1")
+
+[node name="GameOverWithText" type="Sprite2D" parent="." unique_id=750993635]
+position = Vector2(575.25, 323.5)
+scale = Vector2(7.216981, 6.5612245)
+texture = ExtResource("2_ktc4i")

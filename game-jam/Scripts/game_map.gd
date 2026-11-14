@@ -36,6 +36,7 @@ func add_cleaned():
 	
 	if trash_cleaned == total_trash:
 		# We win!!
+		get_tree().change_scene_to_file("res://Scenes/YouWin.tscn")
 		pass
 func _on_enemy_died(enemy: Enemy) -> void:
 	# Save the stats before Enemy.gd frees the old enemy.
