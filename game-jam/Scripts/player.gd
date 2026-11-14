@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var max_health: int = 100
 @export var speed: float = 200.0
 @onready var money = 0
+var dead = false
 
 @export var trash_tile: TileMapLayer
 var facing := "up"
@@ -22,6 +23,10 @@ func _process(delta: float) -> void:
 
 func attacked(damage: int):
 	health -= damage
+	
+	if health <= 0 and not dead:
+		$NoHealthSound.play()
+		dead = true
 
 #Passed in a value for the amount to increase the health by
 #to allow for different kinds of heals

@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cut1kbsdd6nc0" path="res://Assets/Player/right_idle.png" id="11_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://c58xxrpdnx0h3" path="res://Assets/Player/right_walk2.png" id="12_l6n3p"]
 [ext_resource type="AudioStream" uid="uid://cjehv7ah7777k" path="res://Assets/SFX/freesound_community-pasos-steps-40285.mp3" id="18_igrcy"]
+[ext_resource type="AudioStream" uid="uid://dncdecou085w2" path="res://Assets/SFX/freesound_community-microwave-finished-82491.mp3" id="19_fs7ks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpga1"]
 size = Vector2(36, 45)
@@ -297,6 +298,9 @@ animation = &"idle_up"
 [node name="StepSounds" type="AudioStreamPlayer2D" parent="." unique_id=1048495525]
 stream = ExtResource("18_igrcy")
 volume_db = 10.0
+
+[node name="NoHealthSound" type="AudioStreamPlayer2D" parent="." unique_id=1924126075]
+stream = ExtResource("19_fs7ks")
 
 [connection signal="trash_erased" from="Vacuum" to="." method="_on_vacuum_trash_erased"]
 [connection signal="body_shape_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_shape_entered"]
