@@ -29,5 +29,6 @@ texture = ExtResource("2_fu7sn")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=691914172]
 stream = ExtResource("4_glbon")
+autoplay = true
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
