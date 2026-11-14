@@ -287,7 +287,7 @@ debug_color = Color(0.6526195, 0.32715735, 1, 0.41960785)
 position = Vector2(9.000004, 7)
 scale = Vector2(1.40625, 1.375)
 sprite_frames = SubResource("SpriteFrames_dpga1")
-animation = &"idle_up"
+animation = &"move_up"
 
 [connection signal="trash_erased" from="Vacuum" to="." method="_on_vacuum_trash_erased"]
 [connection signal="body_shape_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_shape_entered"]
