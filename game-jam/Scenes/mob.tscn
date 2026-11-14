@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dm8kpl2q3c7nw"]
 
 [ext_resource type="Texture2D" uid="uid://dg83c137np4o6" path="res://Assets/EnemySet/willosuna_station/x4/characters/aliens_robots/grey_alien/grey_alien_idle_down.png" id="1_h5js2"]
+[ext_resource type="Script" uid="uid://beabnagy5tkgv" path="res://Scripts/Enemy.gd" id="2_u8nqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8nqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8nqw"]
 atlas = ExtResource("1_h5js2")
@@ -33,21 +36,31 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_frlhd")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"idle_down",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpsb2"]
-size = Vector2(57, 118)
+size = Vector2(31.25, 61)
 
 [node name="mob" type="CharacterBody2D" unique_id=1916443741]
+script = ExtResource("2_u8nqw")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=296297555]
+position = Vector2(-15, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1888153196]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_u8nqw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1149847262]
+position = Vector2(-16.5, -2.750002)
+scale = Vector2(0.546875, 0.48046872)
 sprite_frames = SubResource("SpriteFrames_lpsb2")
 animation = &"idle_down"
-frame_progress = 0.7399886
+frame_progress = 0.93684053
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580376460]
-position = Vector2(0.5, 2)
+position = Vector2(-16, -3)
 shape = SubResource("RectangleShape2D_lpsb2")
