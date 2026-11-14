@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://irxrm6xfo5d8" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bepa8fa8reuec" path="res://Scenes/weapon.tscn" id="1_rpqav"]
 [ext_resource type="Script" uid="uid://b8sva7ag8e2du" path="res://Scripts/vacuum.gd" id="3_gntrk"]
+[ext_resource type="AudioStream" uid="uid://b5bshv65uqh37" path="res://Assets/SFX/freesound_community-whoosh-6316.mp3" id="3_wpjfl"]
 [ext_resource type="Texture2D" uid="uid://b664ng3pvp2g5" path="res://Assets/mytronado.png" id="4_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://cflml0wicge4u" path="res://Assets/Player/down_idle.png" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://b8shojpgd0lbr" path="res://Assets/Player/down_walk1.png" id="5_3smsa"]
@@ -319,6 +320,9 @@ shape = SubResource("RectangleShape2D_1alby")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/LeftHitBox" unique_id=1559826604]
 position = Vector2(-22, 10)
 shape = SubResource("RectangleShape2D_iv8y2")
+
+[node name="SwordSound" type="AudioStreamPlayer2D" parent="Weapon" unique_id=473164557]
+stream = ExtResource("3_wpjfl")
 
 [node name="Vacuum" type="Node2D" parent="." unique_id=876870418]
 position = Vector2(40, 4)
