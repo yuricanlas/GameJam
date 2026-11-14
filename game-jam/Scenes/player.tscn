@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b664ng3pvp2g5" path="res://Assets/mytronado.png" id="4_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://cflml0wicge4u" path="res://Assets/Player/down_idle.png" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://b8shojpgd0lbr" path="res://Assets/Player/down_walk1.png" id="5_3smsa"]
-[ext_resource type="AudioStream" uid="uid://b4xst032w80ru" path="res://Assets/SFX/Vacuum.mp3" id="5_qqcod"]
+[ext_resource type="AudioStream" uid="uid://cpjnpqr8jm30" path="res://Assets/SFX/u_xg7ssi08yr-vacuum-2-421350.mp3" id="5_igrcy"]
 [ext_resource type="Texture2D" uid="uid://dc0v1fsbej80n" path="res://Assets/Player/down_walk2.png" id="6_8erm5"]
 [ext_resource type="Texture2D" uid="uid://civg6byhkjame" path="res://Assets/Player/up_idle.png" id="7_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://dacc2mt5qbs5n" path="res://Assets/Player/left_walk1.png" id="7_h4iuc"]
@@ -285,7 +285,8 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_jb7p7")
 
 [node name="VacuumSound" type="AudioStreamPlayer2D" parent="Vacuum" unique_id=2020230890]
-stream = ExtResource("5_qqcod")
+stream = ExtResource("5_igrcy")
+volume_db = -10.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(9.000004, 7)

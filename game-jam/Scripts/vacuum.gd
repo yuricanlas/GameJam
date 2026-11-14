@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 		
 	if visible:
 		_suck()
-	print($VacuumSound.playing)
+	
 
 func _suck() -> void:
 	var center: Vector2i = trash_tiles.local_to_map(trash_tiles.to_local($Area2D.global_position))
