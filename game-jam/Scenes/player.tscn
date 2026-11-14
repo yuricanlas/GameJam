@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b664ng3pvp2g5" path="res://Assets/mytronado.png" id="4_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://cflml0wicge4u" path="res://Assets/Player/down_idle.png" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://b8shojpgd0lbr" path="res://Assets/Player/down_walk1.png" id="5_3smsa"]
+[ext_resource type="AudioStream" uid="uid://b4xst032w80ru" path="res://Assets/SFX/Vacuum.mp3" id="5_qqcod"]
 [ext_resource type="Texture2D" uid="uid://dc0v1fsbej80n" path="res://Assets/Player/down_walk2.png" id="6_8erm5"]
 [ext_resource type="Texture2D" uid="uid://civg6byhkjame" path="res://Assets/Player/up_idle.png" id="7_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://dacc2mt5qbs5n" path="res://Assets/Player/left_walk1.png" id="7_h4iuc"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://w4o67fqknqrd" path="res://Assets/Player/right_walk1.png" id="10_igrcy"]
 [ext_resource type="Texture2D" uid="uid://cut1kbsdd6nc0" path="res://Assets/Player/right_idle.png" id="11_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://c58xxrpdnx0h3" path="res://Assets/Player/right_walk2.png" id="12_l6n3p"]
+[ext_resource type="AudioStream" uid="uid://cjehv7ah7777k" path="res://Assets/SFX/freesound_community-pasos-steps-40285.mp3" id="18_igrcy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpga1"]
 size = Vector2(36, 45)
@@ -282,11 +284,21 @@ sprite_frames = SubResource("SpriteFrames_jb7p7")
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_jb7p7")
 
+[node name="VacuumSound" type="AudioStreamPlayer2D" parent="Vacuum" unique_id=2020230890]
+stream = ExtResource("5_qqcod")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(9.000004, 7)
 scale = Vector2(1.40625, 1.375)
 sprite_frames = SubResource("SpriteFrames_dpga1")
 animation = &"idle_up"
 
+[node name="StepSounds" type="AudioStreamPlayer2D" parent="." unique_id=1048495525]
+stream = ExtResource("18_igrcy")
+volume_db = 10.0
+autoplay = true
+
 [connection signal="trash_erased" from="Vacuum" to="." method="_on_vacuum_trash_erased"]
 [connection signal="body_shape_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_shape_entered"]
+[connection signal="finished" from="Vacuum/VacuumSound" to="Vacuum" method="_on_vacuum_sound_finished"]
+[connection signal="finished" from="StepSounds" to="." method="_on_step_sounds_finished"]

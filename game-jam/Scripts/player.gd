@@ -38,7 +38,12 @@ func _physics_process(delta: float) -> void:
 
 	if input_dir == Vector2.ZERO:
 		$AnimatedSprite2D.play("idle_" + facing)
+		if $StepSounds.playing:
+			$StepSounds.stop()
 		return
+		
+		if not $StepSounds.playing:
+			$StepSounds.play()
 
 	# Use the stronger direction when moving diagonally.
 	if absf(input_dir.x) > absf(input_dir.y):
@@ -47,6 +52,11 @@ func _physics_process(delta: float) -> void:
 		facing = "down" if input_dir.y > 0 else "up"
 
 	$AnimatedSprite2D.play("move_" + facing)
+	
 
 func _on_vacuum_trash_erased() -> void:
 	emit_signal("trash_erased")
+
+
+func _on_step_sounds_finished() -> void:
+	$StepSounds.play()
