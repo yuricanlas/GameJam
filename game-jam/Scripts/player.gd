@@ -42,8 +42,9 @@ func _physics_process(delta: float) -> void:
 			$StepSounds.stop()
 		return
 		
-		if not $StepSounds.playing:
-			$StepSounds.play()
+	if not $StepSounds.playing:
+		$StepSounds.play()
+		print("Playing is reached")
 
 	# Use the stronger direction when moving diagonally.
 	if absf(input_dir.x) > absf(input_dir.y):
@@ -56,7 +57,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_vacuum_trash_erased() -> void:
 	emit_signal("trash_erased")
-
 
 func _on_step_sounds_finished() -> void:
 	$StepSounds.play()
