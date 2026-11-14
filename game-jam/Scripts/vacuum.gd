@@ -23,18 +23,22 @@ func _process(delta: float) -> void:
 		self.visible = true
 		rotation_degrees = 270
 		position.x = -abs(position.x)
+		$VacuumNoise.play()
 		
 	if Input.is_action_just_pressed("vaccum_right"):
 		self.visible = true
 		rotation_degrees = 90
 		position.x = abs(position.x)
+		$VacuumNoise.play()
 	
 	if Input.is_action_just_released("vaccum_left"):
 		self.visible = false
+		$VacuumNoise.stop()
 		
 	
 	if Input.is_action_just_released("vaccum_right"):
 		self.visible = false
+		$VacuumNoise.stop()
 		
 	if visible:
 		_suck()
@@ -51,3 +55,7 @@ func _suck() -> void:
 
 func upgrade():
 	strength += 1
+
+func _on_vacuum_noise_finished() -> void:
+	$VacuumNoise.play()
+	pass # Replace with function body.

@@ -31,3 +31,5 @@ https://jitsukoan.itch.io/moonbase
 
 Tornado: Used for the vaccum
 https://creasta.itch.io/tornado-pixel-sprite-sheet
+
+Sound effects were found at https://pixabay.com.
