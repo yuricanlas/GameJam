@@ -7,7 +7,31 @@
 [ext_resource type="Script" uid="uid://dk2ddf5dsn0m1" path="res://Scenes/money_display.gd" id="5_3qyi3"]
 [ext_resource type="PackedScene" uid="uid://ds4xp85mt4mbk" path="res://Scenes/player.tscn" id="5_mue85"]
 [ext_resource type="PackedScene" uid="uid://deydb4o744t64" path="res://Scenes/base.tscn" id="6_rlp0x"]
+[ext_resource type="Script" uid="uid://3bf6jr6ydyav" path="res://Scenes/health_display.gd" id="8_qy8qd"]
+[ext_resource type="Texture2D" uid="uid://di6cqthklsgc4" path="res://Assets/UI/Elements-01.png" id="8_v8ky0"]
 [ext_resource type="PackedScene" uid="uid://dm8kpl2q3c7nw" path="res://Scenes/mob.tscn" id="8_vs6hg"]
+[ext_resource type="Script" uid="uid://bryo52l3sveuw" path="res://Scenes/speed_display.gd" id="9_qy8qd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qy8qd"]
+texture = ExtResource("8_v8ky0")
+5:6/size_in_atlas = Vector2i(74, 38)
+5:6/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y6rfa"]
+sources/0 = SubResource("TileSetAtlasSource_qy8qd")
 
 [node name="GameMap" type="Node2D" unique_id=728196909]
 script = ExtResource("1_c4nuu")
@@ -33,24 +57,50 @@ layer = 5
 
 [node name="TrashDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=939468237]
 z_index = 2
-offset_top = 90.0
-offset_right = 128.0
-offset_bottom = 113.0
+offset_left = 70.0
+offset_top = 44.0
+offset_right = 198.0
+offset_bottom = 67.0
 text = "Placeholder One"
 horizontal_alignment = 1
 script = ExtResource("4_d8w4w")
 
 [node name="MoneyDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=395630189]
 z_index = 1
-offset_left = 93.0
-offset_top = 71.00001
-offset_right = 221.0
-offset_bottom = 94.00001
+offset_left = 46.0
+offset_top = 21.0
+offset_right = 174.0
+offset_bottom = 44.0
 text = "Placeholder Two"
+horizontal_alignment = 1
 script = ExtResource("5_3qyi3")
 
+[node name="HealthDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=122682772]
+z_index = 1
+offset_left = 35.0
+offset_top = 69.0
+offset_right = 175.0
+offset_bottom = 92.0
+text = "Placeholder Three"
+horizontal_alignment = 1
+script = ExtResource("8_qy8qd")
+
+[node name="SpeedDisplay" type="Label" parent="CharacterBody2D/CanvasLayer" unique_id=2039413166]
+z_index = 1
+offset_left = 43.0
+offset_top = 95.0
+offset_right = 183.0
+offset_bottom = 118.0
+text = "Placeholder Four"
+horizontal_alignment = 1
+script = ExtResource("9_qy8qd")
+
+[node name="Stats Background" type="TileMapLayer" parent="CharacterBody2D/CanvasLayer" unique_id=152098040]
+scale = Vector2(0.35, 0.35)
+tile_map_data = PackedByteArray("AAAiAA4AAAAFAAYAAAA=")
+tile_set = SubResource("TileSet_y6rfa")
+
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1788804082]
-zoom = Vector2(2, 2)
 
 [node name="mob" parent="." unique_id=1916443741 instance=ExtResource("8_vs6hg")]
 position = Vector2(-128, 96)
