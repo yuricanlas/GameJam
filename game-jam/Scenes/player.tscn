@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ds4xp85mt4mbk"]
+[gd_scene format=3 uid="uid://j54lupoylhq8"]
 
-[ext_resource type="Script" uid="uid://irxrm6xfo5d8" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://bah3bm0kd2o6o" path="res://Scripts/weapon.gd" id="1_kyqiw"]
 [ext_resource type="PackedScene" uid="uid://bepa8fa8reuec" path="res://Scenes/weapon.tscn" id="1_rpqav"]
 [ext_resource type="Script" uid="uid://b8sva7ag8e2du" path="res://Scripts/vacuum.gd" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://b664ng3pvp2g5" path="res://Assets/mytronado.png" id="4_fd4e3"]
@@ -23,6 +23,12 @@ size = Vector2(36, 45)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1alby"]
 size = Vector2(36, 44.5)
 
+<<<<<<< HEAD
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb7p7"]
+size = Vector2(36, 46)
+
+>>>>>>> origin/Add-Effect
 [sub_resource type="AtlasTexture" id="AtlasTexture_83xs0"]
 atlas = ExtResource("4_fd4e3")
 region = Rect2(0, 5240, 1048, 1048)
@@ -253,7 +259,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=212031758]
-script = ExtResource("1_cvnsp")
+script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147911024]
 position = Vector2(9, 6.5)
@@ -268,6 +274,7 @@ position = Vector2(9, 6.75)
 shape = SubResource("RectangleShape2D_1alby")
 
 [node name="Vacuum" type="Node2D" parent="." unique_id=876870418]
+<<<<<<< HEAD
 position = Vector2(40, 4)
 script = ExtResource("3_gntrk")
 metadata/_custom_type_script = "uid://b8sva7ag8e2du"
@@ -282,6 +289,24 @@ sprite_frames = SubResource("SpriteFrames_jb7p7")
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_jb7p7")
 debug_color = Color(0.6526195, 0.32715735, 1, 0.41960785)
+=======
+visible = false
+position = Vector2(45, 8)
+script = ExtResource("3_gntrk")
+metadata/_custom_type_script = "uid://b8sva7ag8e2du"
+
+[node name="Area2D" type="Area2D" parent="Vacuum" unique_id=922354981]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vacuum/Area2D" unique_id=279823591]
+position = Vector2(5, -2)
+shape = SubResource("RectangleShape2D_jb7p7")
+
+[node name="VacuumSprite" type="AnimatedSprite2D" parent="Vacuum" unique_id=573833931]
+rotation = 1.5707964
+scale = Vector2(0.07, 0.07)
+sprite_frames = SubResource("SpriteFrames_jb7p7")
+autoplay = "default"
+>>>>>>> origin/Add-Effect
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260864110]
 position = Vector2(9.000004, 7)
@@ -289,5 +314,9 @@ scale = Vector2(1.40625, 1.375)
 sprite_frames = SubResource("SpriteFrames_dpga1")
 animation = &"idle_up"
 
+<<<<<<< HEAD
 [connection signal="trash_erased" from="Vacuum" to="." method="_on_vacuum_trash_erased"]
 [connection signal="body_shape_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_shape_entered"]
+=======
+[connection signal="body_entered" from="Vacuum/Area2D" to="Vacuum" method="_on_area_2d_body_entered"]
+>>>>>>> origin/Add-Effect
