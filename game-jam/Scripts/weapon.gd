@@ -20,7 +20,9 @@ func upgrade():
 	
 func attack(direction: String = "right") -> void:
 	var active_hitbox := hitbox_left if direction == "left" else hitbox_right
-
+	
+	$SwordSound.play()
+	
 	# Damage each enemy inside the hitbox for this swing.
 	for body in active_hitbox.get_overlapping_bodies():
 		if body is Enemy:
