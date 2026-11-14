@@ -49,6 +49,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.to_local(global_position)
 		)
 		print("Tile coordinates: ", coords)
+		print(global_position)
 		body.erase_cell(coords)
 		
 		emit_signal("trash_erased")
