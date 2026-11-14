@@ -29,3 +29,7 @@ func add_cleaned():
 func _on_spawn_timer_timeout() -> void:
 	# Spawn the mobs
 	pass # Replace with function body.
+
+
+func _on_music_finished() -> void:
+	$Music.play()

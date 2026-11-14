@@ -23,6 +23,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 
 func attacked(damage: int):
@@ -40,10 +41,16 @@ func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_dir * speed
 	move_and_slide()
-
+	
 	if input_dir == Vector2.ZERO:
 		$AnimatedSprite2D.play("idle_" + facing)
+		if $Steps.playing:
+			$Steps.stop()
 		return
+
+	if not $Steps.playing:
+		$Steps.play()
+	
 
 	# Use the stronger direction when moving diagonally.
 	if absf(input_dir.x) > absf(input_dir.y):
@@ -52,6 +59,12 @@ func _physics_process(delta: float) -> void:
 		facing = "down" if input_dir.y > 0 else "up"
 
 	$AnimatedSprite2D.play("move_" + facing)
+	
+	
 
 func _on_vacuum_trash_erased() -> void:
 	emit_signal("trash_erased")
+
+
+func _on_steps_finished() -> void:
+	$Steps.play()
